@@ -1,4 +1,5 @@
 type SudokuCell = number | null
+export type SudokuGrid = SudokuCell[][];
 
 export class Sudoku {
   grid: SudokuCell[][]
@@ -15,17 +16,59 @@ export class Sudoku {
     this.grid = puzzle
   }
 
-  collapseWaveFunction() {
-    const possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    for (let row = 0; row < 9; row++) {
-      for (let col = 0; col < 9; col++) {
-        if (this.grid[row][col] === null) {
-          // Prenez une valeur possible au hasard pour cette cellule
-          this.grid[row][col] =
-            possibleValues[Math.floor(Math.random() * possibleValues.length)]
+  collapseWaveFunction(sudoku: SudokuGrid): SudokuGrid {
+    // Itérer sur chaque cellule du sudoku
+    for (let i = 0; i < 9; i++) {
+      for (let j = 0; j < 9; j++) {
+        // Si la cellule est vide (représentée par 0)
+        if (sudoku[i][j] === 0) {
+          // Générer une liste de possibilités pour cette cellule
+          const possibilities = this.getPossibilities(sudoku, i, j);
+          // Si il n'y a qu'une seule possibilité, la choisir
+          if (possibilities.length === 1) {
+            sudoku[i][j] = possibilities[0];
+          }
         }
       }
     }
+    return sudoku;
+  }
+  
+  getPossibilities(sudoku: SudokuGrid, row: number, col: number): number[] {
+    const possibilities: number[] = [];
+  
+    // Vérifier chaque nombre de 1 à 9
+    for (let num = 1; num <= 9; num++) {
+      if (this.isValid(sudoku, row, col, num)) {
+        possibilities.push(num);
+      }
+    }
+    return possibilities;
+  }
+  
+  isValid(sudoku: SudokuGrid, row: number, col: number, num: number): boolean {
+    // Vérifier la ligne
+    for (let i = 0; i < 9; i++) {
+      if (sudoku[row][i] === num) {
+        return false;
+      }
+    }
+    // Vérifier la colonne
+    for (let i = 0; i < 9; i++) {
+      if (sudoku[i][col] === num) {
+        return false;
+      }
+    }
+    // Vérifier le bloc 3x3
+    const startRow = row - row % 3;
+    const startCol = col - col % 3;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (sudoku[i + startRow][j + startCol] === num) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 }
