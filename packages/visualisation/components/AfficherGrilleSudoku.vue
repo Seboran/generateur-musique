@@ -1,5 +1,7 @@
 <template>
-  <div>{{ grid }}</div>
+  <table>
+    <AfficherLigneSudoku v-for="ligne in grid" :ligne="ligne" />
+  </table>
 </template>
 
 <script setup lang="ts">

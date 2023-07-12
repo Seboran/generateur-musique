@@ -1,37 +1,37 @@
-type SudokuCell = number | null
-export type SudokuGrid = SudokuCell[][];
+export type SudokuCellule = number | null
+export type SudokuGrid = SudokuCellule[][];
 
 export class Sudoku {
-  grid: SudokuCell[][]
+  grid: SudokuCellule[][]
 
   constructor() {
     // Initialisation du tableau 9x9 avec des valeurs null
     this.grid = Array.from({ length: 9 }, () => Array(9).fill(null))
   }
 
-  initialize(puzzle: SudokuCell[][]) {
+  initialize(puzzle: SudokuCellule[][]) {
     if (puzzle.length !== 9 || puzzle.some((row) => row.length !== 9)) {
       throw new Error('Invalid puzzle')
     }
     this.grid = puzzle
   }
 
-  collapseWaveFunction(sudoku: SudokuGrid): SudokuGrid {
+  collapseWaveFunction(): SudokuGrid {
     // Itérer sur chaque cellule du sudoku
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
         // Si la cellule est vide (représentée par 0)
-        if (sudoku[i][j] === 0) {
+        if (this.grid[i][j] === 0) {
           // Générer une liste de possibilités pour cette cellule
-          const possibilities = this.getPossibilities(sudoku, i, j);
+          const possibilities = this.getPossibilities(this.grid, i, j);
           // Si il n'y a qu'une seule possibilité, la choisir
           if (possibilities.length === 1) {
-            sudoku[i][j] = possibilities[0];
+            this.grid[i][j] = possibilities[0];
           }
         }
       }
     }
-    return sudoku;
+    return this.grid;
   }
   
   getPossibilities(sudoku: SudokuGrid, row: number, col: number): number[] {
