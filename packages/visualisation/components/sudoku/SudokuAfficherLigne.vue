@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <AfficherCelluleSudoku v-for="cellule in ligne" :cellule="cellule" />
+    <SudokuAfficherCellule v-for="cellule in ligne" :cellule="cellule" />
   </tr>
 </template>
 
