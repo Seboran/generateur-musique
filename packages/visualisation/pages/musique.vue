@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div><SudokuAfficherGrille :grid="sudoku.grid" /></div>
+    <ClientOnly
+      ><MusiqueSheet :grilleAccords="sudoku.grid" class="w-screen h-screen" />
+    </ClientOnly>
     <BoutonPropagation @click="propager" />
   </div>
 </template>
@@ -26,3 +28,5 @@ function propager() {
   sudoku.value.collapseWaveFunction()
 }
 </script>
+
+<style scoped></style>

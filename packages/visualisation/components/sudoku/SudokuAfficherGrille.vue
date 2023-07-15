@@ -1,6 +1,6 @@
 <template>
   <table>
-    <AfficherLigneSudoku v-for="ligne in grid" :ligne="ligne" />
+    <SudokuAfficherLigne v-for="ligne in grid" :ligne="ligne" />
   </table>
 </template>
 
