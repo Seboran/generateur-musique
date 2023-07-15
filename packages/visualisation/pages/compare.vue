@@ -2,7 +2,9 @@
   <div class="flex flex-col">
     <div class="flex flex-row space-x-5">
       <SudokuAfficherGrille :grid="sudoku.grid" />
-      <MusiqueSheet :grilleAccords="sudoku.grid" />
+      <ClientOnly>
+        <MusiqueSheet :grilleAccords="sudoku.grid" />
+      </ClientOnly>
     </div>
     <BoutonPropagation @click="propager" />
   </div>
