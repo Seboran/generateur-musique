@@ -21,14 +21,21 @@ const props = defineProps<{
   grilleAccords: SudokuGrid
 }>()
 
-onMounted(async () => {
-  osmd = new OpenSheetMusicDisplay('sheet')
+watchEffect(
+  async () => {
+    osmd = new OpenSheetMusicDisplay('sheet')
 
-  if (!osmd) return
+    if (!osmd) return
 
-  // Convert the chord to music notes and format them for OSMD
-  const notes = props.grilleAccords[0]!.slice(0, 4).map(numberToNote)
-  const xmlString = `
+    // Convert the chord to music notes and format them for OSMD
+    const notes = props.grilleAccords[0]!.map(numberToNote)
+    const xmlString = createPartition()
+
+    await osmd.load(xmlString)
+    osmd.render()
+
+    function createPartition() {
+      return `
   <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="3.1">
@@ -41,8 +48,29 @@ onMounted(async () => {
     </score-part>
   </part-list>
   <part id="P1">
-    <measure number="1">
-      ${notes
+    ${getMesures(notes)}
+  </part>
+</score-partwise>`
+    }
+  },
+  {
+    flush: 'post',
+  }
+)
+
+function getMesures(notes: string[]) {
+  // split notes into measures of 4 notes
+  const measures = []
+  for (let i = 0; i < notes.length; i += 4) {
+    measures.push(notes.slice(i, i + 4))
+  }
+
+  console.log(measures)
+
+  return measures
+    .map(
+      (measure, index) => `<measure number="${index + 1}">
+      ${measure
         .map(
           (note) => `
         <note>
@@ -55,13 +83,10 @@ onMounted(async () => {
         </note>`
         )
         .join('')}
-    </measure>
-  </part>
-</score-partwise>`
-
-  await osmd.load(xmlString)
-  osmd.render()
-})
+    </measure>`
+    )
+    .join('')
+}
 </script>
 
 <style scoped>

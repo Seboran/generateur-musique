@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center">
+  <div class="flex flex-col">
     <div class="flex flex-row space-x-5">
       <SudokuAfficherGrille :grid="sudoku.grid" />
       <MusiqueSheet :grilleAccords="sudoku.grid" />
