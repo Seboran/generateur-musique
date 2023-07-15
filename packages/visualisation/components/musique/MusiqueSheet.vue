@@ -26,10 +26,11 @@ watchEffect(
   async () => {
     osmd = new OpenSheetMusicDisplay('sheet')
 
-    if (!osmd) return
-
     // Convert the chord to music notes and format them for OSMD
-    const notes = props.grilleAccords[0]!.map(numberToNote)
+    const notes = props.grilleAccords
+      .flatMap((grille) => grille)!
+      .map(numberToNote)
+
     const xmlString = createPartition(notes)
 
     await osmd.load(xmlString)
