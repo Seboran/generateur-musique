@@ -1,10 +1,13 @@
 <template>
-  <div style="width: 500px; height: 500px" id="sheet"></div>
+  <div
+    class="overflow-auto"
+    style="width: 500px; height: 500px"
+    id="sheet"
+  ></div>
 </template>
 
 <script setup lang="ts">
 import { SudokuCellule, SudokuGrid } from 'effondrement'
-import { OpenSheetMusicDisplay } from 'opensheetmusicdisplay'
 import { createPartition } from './musiqueUtils'
 
 let osmd: any
@@ -22,9 +25,11 @@ const props = defineProps<{
   grilleAccords: SudokuGrid
 }>()
 
+const { $osmd } = useNuxtApp()
+
 watchEffect(
   async () => {
-    osmd = new OpenSheetMusicDisplay('sheet')
+    osmd = $osmd('sheet')
 
     // Convert the chord to music notes and format them for OSMD
     const notes = props.grilleAccords
