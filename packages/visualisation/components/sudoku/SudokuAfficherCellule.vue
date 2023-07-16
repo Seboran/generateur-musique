@@ -1,13 +1,22 @@
 <template>
-  <td>{{ cellule }}</td>
+  <td
+    class="bg-clip-border m-2 h-10 w-10 text-center bg-slate-100/25 border-2 border-blue-300 focus-within:bg-slate-200 focus:bg-slate-200"
+  >
+    <input
+      class="h-10 w-10 text-center bg-inherit bg-clip-border"
+      :class="{
+        'bg-slate-200': !!cellule,
+      }"
+      :disabled="!!cellule"
+      name="cellule"
+      :value="cellule"
+    />
+  </td>
 </template>
 
 <script setup lang="ts">
 import { SudokuCellule } from 'effondrement'
-
-defineProps<{
-  cellule: SudokuCellule
-}>()
+const cellule = defineModel<SudokuCellule>()
 </script>
 
 <style scoped></style>

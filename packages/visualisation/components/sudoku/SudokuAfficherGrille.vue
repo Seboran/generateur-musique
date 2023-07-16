@@ -1,15 +1,17 @@
 <template>
   <table>
-    <SudokuAfficherLigne v-for="ligne in grid" :ligne="ligne" />
+    <SudokuAfficherLigne
+      v-for="(ligne, index) in grid"
+      :key="index"
+      :model-value="ligne"
+    />
   </table>
 </template>
 
 <script setup lang="ts">
 import { SudokuGrid } from 'effondrement'
 
-defineProps<{
-  grid: SudokuGrid
-}>()
+const grid = defineModel<SudokuGrid>()
 </script>
 
 <style scoped></style>
