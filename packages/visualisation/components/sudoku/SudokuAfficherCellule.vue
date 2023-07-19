@@ -9,7 +9,8 @@
       }"
       :disabled="!!cellule"
       name="cellule"
-      v-model="cellule"
+      :value="cellule || ''"
+      @input="update"
     />
   </td>
 </template>
@@ -21,13 +22,19 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  'update:modelValue': [SudokuCellule | '']
+  'update:modelValue': [SudokuCellule]
 }>()
 
-const cellule = computed<SudokuCellule | ''>({
-  get: () => props.modelValue || '',
+const cellule = computed<SudokuCellule>({
+  get: () => props.modelValue,
   set: (value) => emit('update:modelValue', value),
 })
+
+function update(value: Event) {
+  const target = value.target as HTMLInputElement
+
+  cellule.value = parseInt(target?.value)
+}
 </script>
 
 <style scoped></style>
