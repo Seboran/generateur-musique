@@ -15,4 +15,11 @@ export default defineNuxtConfig({
     },
     '~/components',
   ],
+  vite: {
+    vue: {
+      script: {
+        defineModel: true,
+      },
+    },
+  },
 })
