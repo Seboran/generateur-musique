@@ -19,5 +19,12 @@ export function useSudokuGrid() {
   function propager() {
     sudoku.value.collapseWaveFunction()
   }
+
+  watch(
+    () => sudoku.value.grid,
+    () => propager(),
+    { deep: true },
+  )
+
   return { sudoku, propager }
 }
