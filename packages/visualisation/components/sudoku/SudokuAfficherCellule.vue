@@ -16,7 +16,18 @@
 
 <script setup lang="ts">
 import { SudokuCellule } from 'effondrement'
-const cellule = defineModel<SudokuCellule>()
+const props = defineProps<{
+  modelValue: SudokuCellule
+}>()
+
+const emit = defineEmits<{
+  'update:modelValue': [SudokuCellule | '']
+}>()
+
+const cellule = computed<SudokuCellule | ''>({
+  get: () => props.modelValue || '',
+  set: (value) => emit('update:modelValue', value),
+})
 </script>
 
 <style scoped></style>
