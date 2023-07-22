@@ -1,12 +1,17 @@
 export type SudokuCellule = number | null
-export type SudokuGrid = SudokuCellule[][];
+export type SudokuGrid = SudokuCellule[][]
+export type SudokuPossibilitesCellule = number[]
 
 export class Sudoku {
   grid: SudokuCellule[][]
+  possibilitesGrid: SudokuPossibilitesCellule[][]
 
   constructor() {
     // Initialisation du tableau 9x9 avec des valeurs null
     this.grid = Array.from({ length: 9 }, () => Array(9).fill(null))
+    this.possibilitesGrid = Array.from({ length: 9 }, () =>
+      Array(9).fill([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    )
   }
 
   initialize(puzzle: SudokuCellule[][]) {
@@ -14,61 +19,91 @@ export class Sudoku {
       throw new Error('Invalid puzzle')
     }
     this.grid = puzzle
+    this.diffuserPropagation()
   }
 
   collapseWaveFunction(): SudokuGrid {
+    this.diffuserPropagation()
+    return this.remplirPropagation()
+  }
+
+  remplirPropagation(): SudokuGrid {
     // Itérer sur chaque cellule du sudoku
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
         // Si la cellule est vide (représentée par 0)
         if (this.grid[i][j] === 0) {
           // Générer une liste de possibilités pour cette cellule
-          const possibilities = this.getPossibilities(this.grid, i, j);
+          const possibilities = this.possibilitesGrid[i][j]
           // Si il n'y a qu'une seule possibilité, la choisir
-          if (possibilities.length === 1) {
-            this.grid[i][j] = possibilities[0];
-          }
+          this.remplirGrilleSiPossible(possibilities, i, j)
         }
       }
     }
-    return this.grid;
+    return this.grid
   }
-  
+
+  diffuserPropagation(): SudokuPossibilitesCellule[][] {
+    // Itérer sur chaque cellule du sudoku
+    for (let i = 0; i < 9; i++) {
+      for (let j = 0; j < 9; j++) {
+        // Si la cellule est vide (représentée par 0)
+        if (this.grid[i][j] === 0) {
+          // Générer une liste de possibilités pour cette cellule
+          const possibilities = this.getPossibilities(this.grid, i, j)
+          // Si il n'y a qu'une seule possibilité, la choisir
+          this.possibilitesGrid[i][j] = possibilities
+        }
+      }
+    }
+    return this.possibilitesGrid
+  }
+
+  private remplirGrilleSiPossible(
+    possibilities: number[],
+    i: number,
+    j: number
+  ) {
+    if (possibilities.length === 1) {
+      this.grid[i][j] = possibilities[0]
+    }
+  }
+
   getPossibilities(sudoku: SudokuGrid, row: number, col: number): number[] {
-    const possibilities: number[] = [];
-  
+    const possibilities: number[] = []
+
     // Vérifier chaque nombre de 1 à 9
     for (let num = 1; num <= 9; num++) {
       if (this.isValid(sudoku, row, col, num)) {
-        possibilities.push(num);
+        possibilities.push(num)
       }
     }
-    return possibilities;
+    return possibilities
   }
-  
+
   isValid(sudoku: SudokuGrid, row: number, col: number, num: number): boolean {
     // Vérifier la ligne
     for (let i = 0; i < 9; i++) {
       if (sudoku[row][i] === num) {
-        return false;
+        return false
       }
     }
     // Vérifier la colonne
     for (let i = 0; i < 9; i++) {
       if (sudoku[i][col] === num) {
-        return false;
+        return false
       }
     }
     // Vérifier le bloc 3x3
-    const startRow = row - row % 3;
-    const startCol = col - col % 3;
+    const startRow = row - (row % 3)
+    const startCol = col - (col % 3)
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         if (sudoku[i + startRow][j + startCol] === num) {
-          return false;
+          return false
         }
       }
     }
-    return true;
+    return true
   }
 }
