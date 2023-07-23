@@ -6,15 +6,19 @@
         :key="index"
         :model-value="ligne"
         @update:model-value="($event) => (grid[index] = $event)"
+        :possibilites="possibilites[index]"
       />
     </table>
   </div>
 </template>
 
 <script setup lang="ts">
-import { SudokuGrid } from 'effondrement'
+import { SudokuGrid, SudokuPossibilitesCellule } from 'effondrement'
 
-const grid = defineModel<SudokuGrid>({ required: true })
+const grid = defineModel<SudokuGrid>('grid', { required: true })
+defineProps<{
+  possibilites: SudokuPossibilitesCellule[][]
+}>()
 </script>
 
 <style scoped></style>

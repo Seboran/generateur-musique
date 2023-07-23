@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div><SudokuAfficherGrille v-model="sudoku.grid" /></div>
+    <div>
+      <SudokuAfficherGrille
+        v-model:grid="sudoku.grid"
+        :possibilites="sudoku.possibilitesGrid"
+      />
+    </div>
     <BoutonPropagation @click="propager" />
   </div>
 </template>

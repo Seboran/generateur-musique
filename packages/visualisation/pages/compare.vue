@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-col">
     <div class="flex flex-row space-x-5">
-      <SudokuAfficherGrille v-model="sudoku.grid" />
+      <SudokuAfficherGrille
+        v-model:grid="sudoku.grid"
+        :possibilites="sudoku.possibilitesGrid"
+      />
       <ClientOnly>
         <MusiqueSheet :grilleAccords="sudoku.grid" />
       </ClientOnly>

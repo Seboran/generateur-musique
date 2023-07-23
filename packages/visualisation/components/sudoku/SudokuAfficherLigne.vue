@@ -7,14 +7,18 @@
       :key="index"
       :model-value="cellule"
       @update:model-value="($event) => (ligne[index] = $event)"
+      :possibilites="possibilites[index]"
     />
   </tr>
 </template>
 
 <script setup lang="ts">
-import { SudokuCellule } from 'effondrement'
+import { SudokuCellule, SudokuPossibilitesCellule } from 'effondrement'
 
 const ligne = defineModel<SudokuCellule[]>({ required: true })
+defineProps<{
+  possibilites: SudokuPossibilitesCellule[]
+}>()
 </script>
 
 <style scoped></style>

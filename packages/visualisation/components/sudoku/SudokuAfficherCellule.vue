@@ -16,9 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import { SudokuCellule } from 'effondrement'
+import { SudokuCellule, SudokuPossibilitesCellule } from 'effondrement'
 const props = defineProps<{
   modelValue: SudokuCellule
+  possibilites: SudokuPossibilitesCellule
 }>()
 
 const emit = defineEmits<{
@@ -33,7 +34,20 @@ const cellule = computed<SudokuCellule>({
 function update(value: Event) {
   const target = value.target as HTMLInputElement
 
-  cellule.value = parseInt(target?.value)
+  const parsedInt = parseInt(target?.value)
+
+  if (isNaN(parsedInt)) {
+    cellule.value = 0
+    return
+  }
+
+  if (props.possibilites.includes(parsedInt)) {
+    cellule.value = parsedInt
+    return
+  }
+  alert('malibu')
+
+  cellule.value = 0
 }
 </script>
 
