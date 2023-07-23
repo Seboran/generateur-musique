@@ -6,6 +6,5 @@
 </template>
 
 <script setup lang="ts">
-import { useSudokuGrid } from './useSudokuGrid'
 const { sudoku, propager } = useSudokuGrid()
 </script>
