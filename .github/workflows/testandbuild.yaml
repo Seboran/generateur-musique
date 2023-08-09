@@ -19,6 +19,8 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
+    - name: Install playwright
+      run: npx playwright install
     - name: Run build
       run: pnpm build
     - name: Run test
