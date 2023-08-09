@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test": "npx playwright test"
+    "test:playwright": "npx playwright test"
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.7.6",
