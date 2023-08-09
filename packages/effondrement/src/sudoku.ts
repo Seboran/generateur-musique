@@ -89,7 +89,10 @@ export class Sudoku {
           // Si la cellule est vide (représentée par 0)
           if (this.grid[i][j] === 0) {
             // Vérifier si l'option est possible
-            if (this.possibilitesGrid[i][j].includes(num)) {
+            if (
+              this.possibilitesGrid[i][j].includes(num) &&
+              this.isValid(this.grid, i, j, num)
+            ) {
               count++
               lastPossibleIndex = j
             }
@@ -102,7 +105,7 @@ export class Sudoku {
         // Itérer sur chaque colonne de la cellule
         for (let j = 0; j < 9; j++) {
           // Si la cellule est vide (représentée par 0)
-          if (this.grid[j][i] === 0) {
+          if (this.grid[j][i] === 0 && this.isValid(this.grid, j, i, num)) {
             // Vérifier si l'option est possible
             if (this.possibilitesGrid[j][i].includes(num)) {
               count++
