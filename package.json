@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.1"
   },
   "dependencies": {
     "effondrement": "workspace:*"
