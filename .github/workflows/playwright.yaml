@@ -13,12 +13,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Install dependencies
         run: pnpm i
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run: pnpm run test:playwright
       - uses: actions/upload-artifact@v3
         if: always()
         with:
