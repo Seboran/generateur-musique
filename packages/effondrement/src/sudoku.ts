@@ -40,6 +40,8 @@ export class Sudoku {
         }
       }
     }
+    this.remplirSiOptionUnique()
+
     return this.grid
   }
 
@@ -52,7 +54,7 @@ export class Sudoku {
           // Générer une liste de possibilités pour cette cellule
           const possibilities = this.getPossibilities(this.grid, i, j)
           // Si il n'y a qu'une seule possibilité, la choisir
-          this.possibilitesGrid[i][j] = possibilities
+          this.possibilitesGrid[i][j] = [...possibilities]
         }
       }
     }
@@ -66,6 +68,53 @@ export class Sudoku {
   ) {
     if (possibilities.length === 1) {
       this.grid[i][j] = possibilities[0]
+      this.diffuserPropagation()
+    }
+  }
+  /**
+   * Le but de cette méthode est de parcourir la grille.
+   * Si une option est interdite dans toutes les cases de la ligne sauf une,
+   * alors cette case doit contenir cette option.
+   * Pareillement pour les colonnes et les carrés de sudoku.
+   */
+  remplirSiOptionUnique(): void {
+    // Itérer sur chaque ligne du sudoku
+    for (let i = 0; i < 9; i++) {
+      // Itérer sur chaque option possible
+      for (let num = 1; num <= 9; num++) {
+        let count = 0
+        let lastPossibleIndex = 0
+        // Itérer sur chaque cellule de la ligne
+        for (let j = 0; j < 9; j++) {
+          // Si la cellule est vide (représentée par 0)
+          if (this.grid[i][j] === 0) {
+            // Vérifier si l'option est possible
+            if (this.possibilitesGrid[i][j].includes(num)) {
+              count++
+              lastPossibleIndex = j
+            }
+          }
+        }
+        if (count === 1) {
+          this.grid[i][lastPossibleIndex] = num
+          this.diffuserPropagation()
+        }
+        // Itérer sur chaque colonne de la cellule
+        for (let j = 0; j < 9; j++) {
+          // Si la cellule est vide (représentée par 0)
+          if (this.grid[j][i] === 0) {
+            // Vérifier si l'option est possible
+            if (this.possibilitesGrid[j][i].includes(num)) {
+              count++
+              lastPossibleIndex = j
+            }
+          }
+        }
+        if (count === 1) {
+          this.grid[lastPossibleIndex][i] = num
+          this.diffuserPropagation()
+        }
+      }
     }
   }
 
