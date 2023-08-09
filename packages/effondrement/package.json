@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/playground.ts --watch src",
-    "test": "vitest",
+    "test": "vitest run",
     "coverage": "vitest run --coverage",
     "build": "tsc",
     "prepublish": "ctix create --overwrite --useRootDir && tsc"
@@ -14,12 +14,13 @@
     "@types/node": "^20.2.5",
     "@types/prettier": "^2.7.2",
     "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/coverage-v8": "^0.34.1",
     "ctix": "^1.8.2",
     "nodemon": "^3.0.0",
+    "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
-    "vitest": "^0.34.0",
-    "prettier": "^3.0.0"
+    "vitest": "^0.34.0"
   },
   "files": [
     "dist"

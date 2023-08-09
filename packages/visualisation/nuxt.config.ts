@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     server: true,
     client: true,
   },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-vitest'],
   components: [
     {
       path: '~/components/musique',

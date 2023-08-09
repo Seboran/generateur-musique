@@ -6,7 +6,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -14,8 +16,11 @@
     "@nuxt/typescript-build": "^3.0.1",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.16.19",
+    "happy-dom": "^10.9.0",
     "nuxt": "^3.6.3",
-    "typescript": "^5.1.6"
+    "nuxt-vitest": "^0.10.2",
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.0"
   },
   "dependencies": {
     "opensheetmusicdisplay": "^1.8.0"
