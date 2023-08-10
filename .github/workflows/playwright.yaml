@@ -24,20 +24,21 @@ jobs:
       - name: Cache .pnpm-store
         uses: actions/cache@v3
         with:
-          path: ~/.pnpm-store
+          path: /home/runner/setup-pnpm/node_modules/.bin/store/v3
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
       
       # Cache Playwright binaries
       - name: Cache Playwright binaries
         uses: actions/cache@v3
+        id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+        run: pnpm i --frozen-lockfile  --prefer-offline
       
-      - name: Install Playwright Browsers
+      - name: Install playwright deps
         run: npx playwright install --with-deps
       
       - name: Run Playwright tests
@@ -47,5 +48,5 @@ jobs:
         if: always()
         with:
           name: playwright-report
-          path: playwright-report/
+          path: test-results/
           retention-days: 30
