@@ -1,4 +1,4 @@
-import { SudokuGrid } from 'effondrement'
+import { SudokuGrid } from 'lib-effondrement'
 import { createPartition } from './musiqueUtils'
 import { numberToNote } from './numberToNote'
 

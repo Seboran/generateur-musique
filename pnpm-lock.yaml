@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      effondrement:
+      lib-effondrement:
         specifier: workspace:*
-        version: link:packages/effondrement
+        version: link:packages/lib-effondrement
     devDependencies:
       prettier:
         specifier: ^3.0.1
@@ -19,37 +19,7 @@ importers:
         specifier: ^0.34.0
         version: 0.34.0(happy-dom@10.9.0)
 
-  packages/effondrement:
-    devDependencies:
-      '@types/node':
-        specifier: ^20.2.5
-        version: 20.2.5
-      '@types/prettier':
-        specifier: ^2.7.2
-        version: 2.7.2
-      '@vitest/coverage-v8':
-        specifier: ^0.34.1
-        version: 0.34.1(vitest@0.34.0)
-      ctix:
-        specifier: ^1.8.2
-        version: 1.8.2
-      nodemon:
-        specifier: ^3.0.0
-        version: 3.0.0
-      prettier:
-        specifier: ^3.0.0
-        version: 3.0.0
-      ts-node:
-        specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.2.5)(typescript@5.0.4)
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vitest:
-        specifier: ^0.34.0
-        version: 0.34.0(happy-dom@10.9.0)
-
-  packages/visualisation:
+  packages/app-visualisation:
     dependencies:
       opensheetmusicdisplay:
         specifier: ^1.8.2
@@ -98,6 +68,36 @@ importers:
         specifier: ^0.34.0
         version: 0.34.0(happy-dom@10.9.0)
 
+  packages/lib-effondrement:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.2.5
+        version: 20.4.9
+      '@types/prettier':
+        specifier: ^2.7.2
+        version: 2.7.2
+      '@vitest/coverage-v8':
+        specifier: ^0.34.1
+        version: 0.34.1(vitest@0.34.0)
+      ctix:
+        specifier: ^1.8.2
+        version: 1.8.2
+      nodemon:
+        specifier: ^3.0.0
+        version: 3.0.0
+      prettier:
+        specifier: ^3.0.0
+        version: 3.0.1
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.1(@types/node@20.4.9)(typescript@5.1.6)
+      typescript:
+        specifier: ^5.0.4
+        version: 5.1.6
+      vitest:
+        specifier: ^0.34.0
+        version: 0.34.0(happy-dom@10.9.0)
+
 packages:
 
   /@alloc/quick-lru@5.2.0:
@@ -110,7 +110,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.18
+      '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
   /@antfu/utils@0.7.5:
@@ -936,12 +936,7 @@ packages:
     dependencies:
       '@jridgewell/set-array': 1.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.18
-    dev: true
-
-  /@jridgewell/resolve-uri@3.1.0:
-    resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
-    engines: {node: '>=6.0.0'}
+      '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
   /@jridgewell/resolve-uri@3.1.1:
@@ -961,19 +956,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
-  /@jridgewell/sourcemap-codec@1.4.14:
-    resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
-    dev: true
-
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
-    dev: true
-
-  /@jridgewell/trace-mapping@0.3.18:
-    resolution: {integrity: sha512-w+niJYzMHdd7USdiH2U6869nqhD2nbfZXND5Yp93qIbEmnDNk7PD48o+YchRVpzMU7M6jVCbenTR7PA1FLQ9pA==}
-    dependencies:
-      '@jridgewell/resolve-uri': 3.1.0
-      '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
   /@jridgewell/trace-mapping@0.3.19:
@@ -1402,6 +1386,7 @@ packages:
       - '@types/node'
       - eslint
       - less
+      - lightningcss
       - meow
       - optionator
       - rollup
@@ -1714,7 +1699,7 @@ packages:
   /@ts-morph/common@0.18.1:
     resolution: {integrity: sha512-RVE+zSRICWRsfrkAw5qCAK+4ZH9kwEFv5h0+/YeHTLieWP7F4wWq4JsKFuNWG+fYh/KF+8rAtgdj5zb2mm+DVA==}
     dependencies:
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       minimatch: 5.1.6
       mkdirp: 1.0.4
       path-browserify: 1.0.1
@@ -1906,10 +1891,6 @@ packages:
 
   /@types/node@16.18.40:
     resolution: {integrity: sha512-+yno3ItTEwGxXiS/75Q/aHaa5srkpnJaH+kdkTVJ3DtJEwv92itpKbxU+FjPoh2m/5G9zmUQfrL4A4C13c+iGA==}
-    dev: true
-
-  /@types/node@20.2.5:
-    resolution: {integrity: sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==}
     dev: true
 
   /@types/node@20.4.9:
@@ -3021,7 +3002,7 @@ packages:
     resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /camelcase-css@2.0.1:
@@ -3056,7 +3037,7 @@ packages:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
       upper-case-first: 2.0.2
     dev: true
 
@@ -3109,7 +3090,7 @@ packages:
       path-case: 3.0.4
       sentence-case: 3.0.4
       snake-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /check-error@1.0.2:
@@ -3341,7 +3322,7 @@ packages:
     resolution: {integrity: sha512-I2hSBi7Vvs7BEuJDr5dDHfzb/Ruj3FyvFyh7KLilAjNQw3Be+xgqUBA2W6scVEcL0hL1dwPRtIqEPVUCKkSsyQ==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
       upper-case: 2.0.2
     dev: true
 
@@ -3571,7 +3552,7 @@ packages:
       change-case: 4.1.2
       cli-progress: 3.12.0
       dayjs: 1.11.9
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       fast-safe-stringify: 2.1.1
       find-up: 5.0.0
       ignore: 5.2.4
@@ -3590,7 +3571,7 @@ packages:
       prettier: 2.8.8
       source-map-support: 0.5.21
       ts-morph: 17.0.1
-      tslib: 2.6.0
+      tslib: 2.6.1
       type-fest: 3.13.0
       typescript: 4.9.5
       upper-case-first: 2.0.2
@@ -3911,7 +3892,7 @@ packages:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /dot-prop@7.2.0:
@@ -4260,17 +4241,6 @@ packages:
       https-proxy-agent: 7.0.1
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /fast-glob@3.3.0:
-    resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
-    engines: {node: '>=8.6.0'}
-    dependencies:
-      '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.8
-      glob-parent: 5.1.2
-      merge2: 1.4.1
-      micromatch: 4.0.5
     dev: true
 
   /fast-glob@3.3.1:
@@ -4829,7 +4799,7 @@ packages:
     resolution: {integrity: sha512-H/vuk5TEEVZwrR0lp2zed9OCo1uAILMlx0JEMgC26rzyJJ3N1v6XkwHHXJQdR2doSjcGPM6OKPYoJgf0plJ11Q==}
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /help-me@4.2.0:
@@ -6250,7 +6220,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /node-abi@3.45.0:
@@ -6600,6 +6570,7 @@ packages:
       - eslint
       - idb-keyval
       - less
+      - lightningcss
       - meow
       - optionator
       - rollup
@@ -6836,7 +6807,7 @@ packages:
     resolution: {integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /parent-module@1.0.1:
@@ -6897,7 +6868,7 @@ packages:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /path-browserify@1.0.1:
@@ -6908,7 +6879,7 @@ packages:
     resolution: {integrity: sha512-qO4qCFjXqVTrcbPt/hQfhTQ+VhFsqNKOPtytgNKkKxSoEp3XPUQ8ObFuePylOIok5gjn69ry8XiULxCwot3Wfg==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /path-exists@4.0.0:
@@ -7565,12 +7536,6 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier@3.0.0:
-    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
-    engines: {node: '>=14'}
-    hasBin: true
-    dev: true
-
   /prettier@3.0.1:
     resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
     engines: {node: '>=14'}
@@ -8040,7 +8005,7 @@ packages:
     resolution: {integrity: sha512-8LS0JInaQMCRoQ7YUytAo/xUu5W2XnQxV2HI/6uM6U7CITS1RqPElr30V6uIqyMKM9lJGRVFy5/4CuzcixNYSg==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
       upper-case-first: 2.0.2
     dev: true
 
@@ -8182,7 +8147,7 @@ packages:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /socks-proxy-agent@7.0.0:
@@ -8728,7 +8693,7 @@ packages:
       code-block-writer: 11.0.3
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.2.5)(typescript@5.0.4):
+  /ts-node@10.9.1(@types/node@20.4.9)(typescript@5.1.6):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -8747,20 +8712,16 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.2.5
+      '@types/node': 20.4.9
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.0.4
+      typescript: 5.1.6
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
-    dev: true
-
-  /tslib@2.6.0:
-    resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
     dev: true
 
   /tslib@2.6.1:
@@ -8837,12 +8798,6 @@ packages:
   /typescript@4.9.5:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
-  /typescript@5.0.4:
-    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
-    engines: {node: '>=12.20'}
     hasBin: true
     dev: true
 
@@ -9073,7 +9028,7 @@ packages:
   /upper-case-first@2.0.2:
     resolution: {integrity: sha512-514ppYHBaKwfJRK/pNC6c/OxfGa0obSnAl106u97Ed0I625Nin96KAjttZF6ZL3e1XLtphxnqrOi9iWgm+u+bg==}
     dependencies:
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /upper-case@2.0.2:
@@ -9109,7 +9064,7 @@ packages:
     resolution: {integrity: sha512-6z3GW9x8G1gd+JIIgQQQxXuiJtCXeAjp6RaPEPLv62mH3iPHPxV6W3robxtCzNErRo6ZwTmzWhsbNvjyEBKzKA==}
     engines: {node: '>=10.12.0'}
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.18
+      '@jridgewell/trace-mapping': 0.3.19
       '@types/istanbul-lib-coverage': 2.0.4
       convert-source-map: 1.9.0
     dev: true
@@ -9147,10 +9102,11 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.3.9(@types/node@20.4.9)
+      vite: 4.4.9(@types/node@20.4.9)
     transitivePeerDependencies:
       - '@types/node'
       - less
+      - lightningcss
       - sass
       - stylus
       - sugarss

@@ -1,4 +1,4 @@
-import { SudokuCellule } from 'effondrement'
+import { SudokuCellule } from 'lib-effondrement'
 
 export const numberToNote = (number: SudokuCellule) => {
   if (!number) {

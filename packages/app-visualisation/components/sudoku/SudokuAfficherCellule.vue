@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { SudokuCellule, SudokuPossibilitesCellule } from 'effondrement'
+import { SudokuCellule, SudokuPossibilitesCellule } from 'lib-effondrement'
 const props = defineProps<{
   modelValue: SudokuCellule
   possibilites: SudokuPossibilitesCellule
