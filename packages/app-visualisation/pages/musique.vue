@@ -1,14 +1,14 @@
 <template>
   <div>
-    <ClientOnly
-      ><MusiqueSheet :grilleAccords="sudoku.grid" class="w-screen h-screen" />
+    <ClientOnly>
+      <MusiqueSheet :grilleAccords="sudoku.grid" class="w-screen h-screen" />
     </ClientOnly>
     <BoutonPropagation @click="propager" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { Sudoku, SudokuGrid } from 'effondrement'
+import { Sudoku, SudokuGrid } from 'lib-effondrement'
 const initialSudokuGrid: SudokuGrid = [
   [0, 0, 0, 0, 7, 0, 0, 8, 0],
   [2, 7, 4, 9, 0, 8, 0, 0, 5],

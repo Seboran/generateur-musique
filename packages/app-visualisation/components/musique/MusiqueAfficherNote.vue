@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { SudokuCellule } from 'effondrement'
+import { SudokuCellule } from 'lib-effondrement'
 
 defineProps<{
   note: SudokuCellule

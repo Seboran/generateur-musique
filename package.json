@@ -8,7 +8,7 @@
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "test": "pnpm -r --filter='./packages/*' run test",
     "coverage": "pnpm -r --filter='./packages/*' run coverage",
-    "test:playwright": "pnpm -r --filter='./packages/visualisation' run test:playwright",
+    "test:playwright": "pnpm -r --filter='./packages/*' run test:playwright",
     "format": "prettier --write --cache ."
   },
   "keywords": [],
@@ -19,6 +19,6 @@
     "vitest": "^0.34.0"
   },
   "dependencies": {
-    "effondrement": "workspace:*"
+    "lib-effondrement": "workspace:*"
   }
 }
