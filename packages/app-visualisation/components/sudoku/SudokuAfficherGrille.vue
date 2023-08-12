@@ -1,8 +1,13 @@
 <template>
   <div class="h-90">
     <table>
-      <SudokuAfficherLigne v-for="(ligne, index) in grid" :key="index" :model-value="ligne"
-        @update:model-value="($event) => (grid[index] = $event)" :possibilites="possibilites[index]" />
+      <SudokuAfficherLigne
+        v-for="(ligne, index) in grid"
+        :key="index"
+        :model-value="ligne"
+        @update:model-value="($event) => (grid[index] = $event)"
+        :possibilites="possibilites[index]"
+      />
     </table>
   </div>
 </template>

@@ -10,7 +10,7 @@ export class Sudoku {
     // Initialisation du tableau 9x9 avec des valeurs null
     this.grid = Array.from({ length: 9 }, () => Array(9).fill(null))
     this.possibilitesGrid = Array.from({ length: 9 }, () =>
-      Array(9).fill([1, 2, 3, 4, 5, 6, 7, 8, 9])
+      Array(9).fill([1, 2, 3, 4, 5, 6, 7, 8, 9]),
     )
   }
 
@@ -64,7 +64,7 @@ export class Sudoku {
   private remplirGrilleSiPossible(
     possibilities: number[],
     i: number,
-    j: number
+    j: number,
   ) {
     if (possibilities.length === 1) {
       this.grid[i][j] = possibilities[0]

@@ -25,7 +25,7 @@ const getMesures = (notes: string[]) => {
     .map(
       (measure, index) => `<measure number="${index + 1}">
       // ${measure.map(createNote).join('\n')}
-    </measure>`
+    </measure>`,
     )
     .join('')
 }

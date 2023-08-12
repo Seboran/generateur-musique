@@ -21,7 +21,7 @@ export function useOsmd(divId: string, grilleAccords: SudokuGrid) {
     },
     {
       flush: 'post',
-    }
+    },
   )
   onUnmounted(() => {
     osmd?.clear()
