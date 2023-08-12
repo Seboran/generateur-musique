@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-# formating
-pnpm run format:check
+
+pnpm run commitlint ${1}

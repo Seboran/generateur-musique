@@ -13,15 +13,18 @@
     "test:playwright": "pnpm -r --filter='./packages/*' run test:playwright",
     "format": "prettier --write --cache .",
     "format:check": "prettier --check .",
-    "coverage:preview": "npx vite preview --outDir ./coverage"
+    "coverage:preview": "npx vite preview --outDir ./coverage",
+    "commitlint": "commitlint --edit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@vitest/ui": "^0.34.1",
-    "prettier": "^3.0.1",
     "husky": "^8.0.3",
+    "prettier": "^3.0.1",
     "vitest": "^0.34.0"
   },
   "dependencies": {
