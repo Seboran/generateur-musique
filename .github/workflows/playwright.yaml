@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -19,14 +19,14 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-      
+
       # Cache .pnpm-store
       - name: Cache .pnpm-store
         uses: actions/cache@v3
         with:
           path: /home/runner/setup-pnpm/node_modules/.bin/store/v3
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-      
+
       # Cache Playwright binaries
       - name: Cache Playwright binaries
         uses: actions/cache@v3
@@ -37,10 +37,10 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile  --prefer-offline
-      
+
       - name: Install playwright deps
         run: npx playwright install --with-deps
-      
+
       - name: Run Playwright tests
         run: pnpm run test:playwright
 

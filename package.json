@@ -11,6 +11,7 @@
     "coverage": "vitest run --coverage",
     "test:playwright": "pnpm -r --filter='./packages/*' run test:playwright",
     "format": "prettier --write --cache .",
+    "format:check": "prettier --check .",
     "coverage:preview": "npx vite preview --outDir ./coverage"
   },
   "keywords": [],
