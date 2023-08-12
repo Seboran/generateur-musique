@@ -3,6 +3,24 @@ import { Sudoku } from '../sudoku'
 import { prettyPrintGrid } from './utils'
 
 suite('sudoku', () => {
+  suite('grille de possibilités', () => {
+    test('génère une grille de possibilités avec une case remplie vide de possibilités', () => {
+      const sudoku = new Sudoku()
+      sudoku.initialize([
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      ])
+      expect(sudoku.possibilitesGrid[0][0]).toEqual([1, 4, 5, 6, 7, 8, 9])
+      expect(sudoku.possibilitesGrid[1][1]).toHaveLength(0)
+    })
+  })
   suite('initialisation du sudoku', () => {
     test('initialise un sudoku vide', () => {
       const sudoku = new Sudoku()

@@ -1,3 +1,5 @@
+import { visitArray } from './utils/visitArray'
+
 export type SudokuCellule = number | null
 export type SudokuGrid = SudokuCellule[][]
 export type SudokuPossibilitesCellule = number[]
@@ -14,11 +16,24 @@ export class Sudoku {
     )
   }
 
+  private removePossibilitesCaseRemplie(): void {
+    visitArray(this.grid, (value, i, j): void => {
+      if (value !== 0) {
+        this.removePossibilites(i, j)
+      }
+    })
+  }
+
+  private removePossibilites(i: number, j: number) {
+    this.possibilitesGrid[i][j] = []
+  }
+
   initialize(puzzle: SudokuCellule[][]) {
     if (puzzle.length !== 9 || puzzle.some((row) => row.length !== 9)) {
       throw new Error('Invalid puzzle')
     }
     this.grid = puzzle
+    this.removePossibilitesCaseRemplie()
     this.diffuserPropagation()
   }
 
@@ -27,7 +42,7 @@ export class Sudoku {
     return this.remplirPropagation()
   }
 
-  remplirPropagation(): SudokuGrid {
+  private remplirPropagation(): SudokuGrid {
     // Itérer sur chaque cellule du sudoku
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
@@ -45,7 +60,7 @@ export class Sudoku {
     return this.grid
   }
 
-  diffuserPropagation(): SudokuPossibilitesCellule[][] {
+  private diffuserPropagation(): SudokuPossibilitesCellule[][] {
     // Itérer sur chaque cellule du sudoku
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
@@ -68,6 +83,7 @@ export class Sudoku {
   ) {
     if (possibilities.length === 1) {
       this.grid[i][j] = possibilities[0]
+      this.removePossibilites(i, j)
       this.diffuserPropagation()
     }
   }
@@ -82,7 +98,7 @@ export class Sudoku {
     for (let i = 0; i < 9; i++) {
       // Itérer sur chaque option possible
       for (let num = 1; num <= 9; num++) {
-        let count = 0
+        let countLigne = 0
         let lastPossibleIndex = 0
         // Itérer sur chaque cellule de la ligne
         for (let j = 0; j < 9; j++) {
@@ -93,35 +109,42 @@ export class Sudoku {
               this.possibilitesGrid[i][j].includes(num) &&
               this.isValid(this.grid, i, j, num)
             ) {
-              count++
+              countLigne++
               lastPossibleIndex = j
             }
           }
         }
-        if (count === 1) {
+        if (countLigne === 1) {
           this.grid[i][lastPossibleIndex] = num
+          this.removePossibilites(i, lastPossibleIndex)
           this.diffuserPropagation()
         }
+        let countColonne = 0
         // Itérer sur chaque colonne de la cellule
         for (let j = 0; j < 9; j++) {
           // Si la cellule est vide (représentée par 0)
           if (this.grid[j][i] === 0 && this.isValid(this.grid, j, i, num)) {
             // Vérifier si l'option est possible
             if (this.possibilitesGrid[j][i].includes(num)) {
-              count++
+              countColonne++
               lastPossibleIndex = j
             }
           }
         }
-        if (count === 1) {
+        if (countColonne === 1) {
           this.grid[lastPossibleIndex][i] = num
+          this.removePossibilites(lastPossibleIndex, i)
           this.diffuserPropagation()
         }
       }
     }
   }
 
-  getPossibilities(sudoku: SudokuGrid, row: number, col: number): number[] {
+  private getPossibilities(
+    sudoku: SudokuGrid,
+    row: number,
+    col: number,
+  ): number[] {
     const possibilities: number[] = []
 
     // Vérifier chaque nombre de 1 à 9
@@ -133,7 +156,12 @@ export class Sudoku {
     return possibilities
   }
 
-  isValid(sudoku: SudokuGrid, row: number, col: number, num: number): boolean {
+  private isValid(
+    sudoku: SudokuGrid,
+    row: number,
+    col: number,
+    num: number,
+  ): boolean {
     // Vérifier la ligne
     for (let i = 0; i < 9; i++) {
       if (sudoku[row][i] === num) {
