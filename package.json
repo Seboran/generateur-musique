@@ -8,14 +8,16 @@
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "test": "vitest run",
     "test:watch": "vitest",
-    "coverage": "pnpm -r --filter='./packages/*' run coverage",
+    "coverage": "vitest run --coverage",
     "test:playwright": "pnpm -r --filter='./packages/*' run test:playwright",
-    "format": "prettier --write --cache ."
+    "format": "prettier --write --cache .",
+    "coverage:preview": "npx vite preview --outDir ./coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vitest/ui": "^0.34.1",
     "prettier": "^3.0.1",
     "vitest": "^0.34.0"
   },

@@ -10,5 +10,8 @@ export default defineVitestConfig({
       },
     },
     include: ['**/*.{test, spec}.ts'],
+    coverage: {
+      reporter: ['text', 'json', 'json-summary', 'html'],
+    },
   },
 })

@@ -12,12 +12,15 @@ importers:
         specifier: workspace:*
         version: link:packages/lib-effondrement
     devDependencies:
+      '@vitest/ui':
+        specifier: ^0.34.1
+        version: 0.34.1(vitest@0.34.0)
       prettier:
         specifier: ^3.0.1
         version: 3.0.1
       vitest:
         specifier: ^0.34.0
-        version: 0.34.0(happy-dom@10.9.0)
+        version: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
 
   packages/app-visualisation:
     dependencies:
@@ -66,7 +69,7 @@ importers:
         version: 5.1.6
       vitest:
         specifier: ^0.34.0
-        version: 0.34.0(happy-dom@10.9.0)
+        version: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
 
   packages/lib-effondrement:
     devDependencies:
@@ -96,7 +99,7 @@ importers:
         version: 5.1.6
       vitest:
         specifier: ^0.34.0
-        version: 0.34.0(happy-dom@10.9.0)
+        version: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
 
 packages:
 
@@ -1290,7 +1293,7 @@ packages:
       ofetch: 1.1.1
       pathe: 1.1.1
       ufo: 1.2.0
-      vitest: 0.34.0(happy-dom@10.9.0)
+      vitest: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
       vue: 3.3.4
     transitivePeerDependencies:
       - rollup
@@ -2133,7 +2136,7 @@ packages:
       std-env: 3.3.3
       test-exclude: 6.0.0
       v8-to-istanbul: 9.1.0
-      vitest: 0.34.0(happy-dom@10.9.0)
+      vitest: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2180,7 +2183,22 @@ packages:
       pathe: 1.1.1
       picocolors: 1.0.0
       sirv: 2.0.3
-      vitest: 0.34.0(happy-dom@10.9.0)
+      vitest: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
+    dev: true
+
+  /@vitest/ui@0.34.1(vitest@0.34.0):
+    resolution: {integrity: sha512-bwmkgMjDcMr3pg0UXLwfwZ/WI1fq2N+5DUisqHkY9bvnNRnpT6QiewtSS/VhmN61ixgNpSKbEGVboml2GLuxfA==}
+    peerDependencies:
+      vitest: '>=0.30.1 <1'
+    dependencies:
+      '@vitest/utils': 0.34.1
+      fast-glob: 3.3.1
+      fflate: 0.8.0
+      flatted: 3.2.7
+      pathe: 1.1.1
+      picocolors: 1.0.0
+      sirv: 2.0.3
+      vitest: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
     dev: true
 
   /@vitest/utils@0.33.0:
@@ -2193,6 +2211,14 @@ packages:
 
   /@vitest/utils@0.34.0:
     resolution: {integrity: sha512-IktrDLhBKf3dEUUxH+lcHiPnaw952+GdGvoxg99liMscgP6IePf6LuMY7B9dEIHkFunB1R8VMR/wmI/4UGg1aw==}
+    dependencies:
+      diff-sequences: 29.4.3
+      loupe: 2.3.6
+      pretty-format: 29.6.2
+    dev: true
+
+  /@vitest/utils@0.34.1:
+    resolution: {integrity: sha512-/ql9dsFi4iuEbiNcjNHQWXBum7aL8pyhxvfnD9gNtbjR9fUKAjxhj4AA3yfLXg6gJpMGGecvtF8Au2G9y3q47Q==}
     dependencies:
       diff-sequences: 29.4.3
       loupe: 2.3.6
@@ -6478,7 +6504,7 @@ packages:
       perfect-debounce: 1.0.0
       std-env: 3.3.3
       vite: 4.4.9(@types/node@20.4.9)
-      vitest: 0.34.0(happy-dom@10.9.0)
+      vitest: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
       vitest-environment-nuxt: 0.10.2(happy-dom@10.9.0)(vitest@0.34.0)(vue-router@4.2.4)(vue@3.3.4)
     transitivePeerDependencies:
       - '@vue/server-renderer'
@@ -9323,7 +9349,7 @@ packages:
       magic-string: 0.30.2
       ofetch: 1.1.1
       unenv: 1.7.1
-      vitest: 0.34.0(happy-dom@10.9.0)
+      vitest: 0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0)
       vue: 3.3.4
       vue-router: 4.2.4(vue@3.3.4)
       whatwg-fetch: 3.6.17
@@ -9333,7 +9359,7 @@ packages:
       - supports-color
     dev: true
 
-  /vitest@0.34.0(happy-dom@10.9.0):
+  /vitest@0.34.0(@vitest/ui@0.34.1)(happy-dom@10.9.0):
     resolution: {integrity: sha512-8Pnc1fVt1P6uBncdUZ++hgiJGgxIRKuz4bmS/PQziaEcUj0D1g9cGiR1MbLrcsvFTC6fgrqDhYoTAdBG356WMA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -9371,6 +9397,7 @@ packages:
       '@vitest/runner': 0.34.0
       '@vitest/snapshot': 0.34.0
       '@vitest/spy': 0.34.0
+      '@vitest/ui': 0.34.1(vitest@0.34.0)
       '@vitest/utils': 0.34.0
       acorn: 8.10.0
       acorn-walk: 8.2.0
