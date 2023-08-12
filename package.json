@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "build": "pnpm -r --filter='./packages/*' run build",
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "test": "vitest run",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@vitest/ui": "^0.34.1",
     "prettier": "^3.0.1",
+    "husky": "^8.0.3",
     "vitest": "^0.34.0"
   },
   "dependencies": {
