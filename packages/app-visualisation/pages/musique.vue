@@ -3,7 +3,7 @@
     <ClientOnly>
       <MusiqueSheet :grilleAccords="sudoku.grid" class="h-screen w-screen" />
     </ClientOnly>
-    <BoutonPropagation @click="propager" />
+    <StyledBouton @click="propager">Propager</StyledBouton>
   </div>
 </template>
 
