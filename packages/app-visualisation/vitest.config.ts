@@ -9,7 +9,7 @@ export default defineVitestConfig({
         rootDir: __dirname,
       },
     },
-    include: ['./src/**/*.{test, spec}.ts'],
+    include: ['./**/*.{test, spec}.ts'],
     coverage: {
       reporter: ['text', 'json', 'json-summary', 'html'],
     },

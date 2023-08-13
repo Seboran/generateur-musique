@@ -13,10 +13,10 @@
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "test": "vitest run",
     "test:watch": "vitest",
-    "coverage": "vitest run --coverage",
     "test:playwright": "pnpm -r --filter='./packages/*' run test:playwright",
     "format": "prettier --write --cache .",
     "format:check": "prettier --check .",
+    "coverage": "vitest run --coverage",
     "coverage:preview": "npx vite preview --outDir ./coverage",
     "commitlint": "commitlint --edit"
   },
