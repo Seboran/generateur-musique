@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "prepare": "husky install",
     "build": "pnpm -r --filter='./packages/*' run build",
@@ -20,12 +24,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
-    "@vitest/ui": "^0.34.1",
-    "husky": "^8.0.3",
     "prettier": "^3.0.1",
     "vitest": "^0.34.0"
+  },
+  "optionalDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3",
+    "@vitest/ui": "^0.34.1"
   },
   "dependencies": {
     "lib-effondrement": "workspace:*"
