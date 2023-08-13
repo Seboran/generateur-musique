@@ -10,6 +10,12 @@ export default defineVitestConfig({
       },
     },
     include: ['./**/*.{test, spec}.ts'],
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/coverage/**',
+      '**/lib-effondrement/**',
+    ],
     coverage: {
       reporter: ['text', 'json', 'json-summary', 'html'],
     },
