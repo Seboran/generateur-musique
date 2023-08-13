@@ -61,7 +61,7 @@ suite('SudokuAfficherLigne', () => {
     expect(inputs[8].attributes).not.toHaveProperty('disabled')
   })
   test('Remplit une case', async () => {
-    const { getAllByRole } = render(SudokuAfficherLigne, {
+    const { getAllByRole, emitted } = render(SudokuAfficherLigne, {
       props: {
         modelValue: [1, 2, 3, 4, 5, 6, 0, 0, 0],
         possibilites: [[], [], [], [], [], [], [7, 8, 9], [7, 8, 9], [7, 8, 9]],
@@ -72,6 +72,8 @@ suite('SudokuAfficherLigne', () => {
 
     expect(septiemeCase.value).toBe('')
     await fireEvent.update(septiemeCase, '7')
-    expect(septiemeCase.value).toBe(7)
+    expect(septiemeCase.value).toBe('7')
+    expect(emitted()).toHaveProperty('update:modelValue')
+    expect(emitted()['update:modelValue']).toHaveLength(1)
   })
 })

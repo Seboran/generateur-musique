@@ -1,7 +1,13 @@
-import { render } from '@testing-library/vue'
-import { suite, test, expect } from 'vitest'
+import { fireEvent, render } from '@testing-library/vue'
+import { expect, suite, test } from 'vitest'
 import SudokuAfficherGrille from '../SudokuAfficherGrille.vue'
-import { makeGrilleRemplie, makePossibilitesVides } from './makeMocks'
+import {
+  makeGrilleRemplie,
+  makeGrilleVide,
+  makePossibilitesCompletes,
+  makePossibilitesVides,
+} from './makeMocks'
+import userEvent from '@testing-library/user-event'
 
 suite('SudokuAfficherGrille', () => {
   test('Affiche une grille', () => {
@@ -48,5 +54,22 @@ suite('SudokuAfficherGrille', () => {
     expect(inputs.flatMap((input) => input.attributes)).toContainEqual(
       expect.not.objectContaining({ name: 'disabled' }),
     )
+  })
+  test('Modifier une valeur', async () => {
+    const { getAllByRole, emitted } = render(SudokuAfficherGrille, {
+      props: {
+        grid: makeGrilleVide(),
+        possibilites: makePossibilitesCompletes(),
+      },
+    })
+    const inputs: HTMLInputElement[] = getAllByRole('textbox')
+    await fireEvent.update(inputs[0], '9')
+    expect(inputs[0].value).toBe('9')
+    expect(emitted()).toHaveProperty('update:grid')
+    expect(emitted()['update:grid']).toHaveLength(1)
+    // @ts-ignore : le type de update:grid est incorrect
+    expect(emitted()['update:grid'][0][0][0]).toEqual([
+      9, 0, 0, 0, 0, 0, 0, 0, 0,
+    ])
   })
 })
