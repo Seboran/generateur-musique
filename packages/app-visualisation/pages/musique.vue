@@ -1,7 +1,7 @@
 <template>
   <div>
     <ClientOnly>
-      <MusiqueSheet :grilleAccords="sudoku.grid" class="w-screen h-screen" />
+      <MusiqueSheet :grilleAccords="sudoku.grid" class="h-screen w-screen" />
     </ClientOnly>
     <BoutonPropagation @click="propager" />
   </div>
