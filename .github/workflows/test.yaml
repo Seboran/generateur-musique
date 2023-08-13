@@ -1,0 +1,34 @@
+name: test
+on:
+  workflow_call:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      # Required to checkout the code
+      contents: read
+      # Required to put a comment into the pull-request
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      # Cache .pnpm-store
+      - name: Cache .pnpm-store
+        uses: actions/cache@v3
+        with:
+          path: /home/runner/setup-pnpm/node_modules/.bin/store/v3
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile  --prefer-offline --ignore-scripts
+      - name: 'Test'
+        run: npx vitest --coverage.enabled --coverage.provider=v8 --coverage.reporter=json-summary --coverage.reporter=json
+      - name: 'Report Coverage'
+        if: always() # Also gepnpnerate the report if tests are failing
+        uses: davelosert/vitest-coverage-report-action@v2
