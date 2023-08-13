@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[800px] h-[600px] bg-slate-50 rounded-xl dark:bg-slate-200/75 m-4 p-8 overflow-y-scroll min-w-max"
+    class="m-4 h-[600px] w-[800px] min-w-max overflow-y-scroll rounded-xl bg-slate-50 p-8 dark:bg-slate-200/75"
   >
     <slot />
   </div>

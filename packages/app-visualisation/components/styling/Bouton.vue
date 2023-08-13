@@ -4,7 +4,7 @@
     type="button"
     @click="$emit('click')"
   >
-    Propager
+    <slot />
   </button>
 </template>
 
