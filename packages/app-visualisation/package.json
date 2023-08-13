@@ -7,7 +7,6 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test:playwright": "npx playwright test",
     "test": "vitest run"
   },
   "devDependencies": {
@@ -16,15 +15,12 @@
     "@nuxt/types": "^2.17.1",
     "@nuxt/typescript-build": "^3.0.1",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "@playwright/test": "^1.36.2",
     "@testing-library/user-event": "^14.4.3",
     "@testing-library/vue": "^7.0.0",
     "@types/node": "^20.4.9",
     "happy-dom": "^10.9.0",
     "nuxt": "^3.6.5",
-    "nuxt-vitest": "^0.10.2",
-    "typescript": "^5.1.6",
-    "vitest": "^0.34.0"
+    "nuxt-vitest": "^0.10.2"
   },
   "dependencies": {
     "opensheetmusicdisplay": "^1.8.2"

@@ -10,10 +10,11 @@
   "scripts": {
     "prepare": "husky install",
     "build": "pnpm -r --filter='./packages/*' run build",
+    "preview": "pnpm -C ./packages/app-visualisation run preview",
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:playwright": "pnpm -r --filter='./packages/*' run test:playwright",
+    "test:playwright": "pnpm -C ./packages/app-e2e run test:playwright",
     "format": "prettier --write --cache .",
     "format:check": "prettier --check .",
     "coverage": "vitest run --coverage",
@@ -26,7 +27,9 @@
   "devDependencies": {
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.5.2",
-    "vitest": "^0.34.0"
+    "@playwright/test": "^1.36.2",
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.1"
   },
   "optionalDependencies": {
     "@commitlint/cli": "^17.7.1",
