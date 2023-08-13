@@ -7,7 +7,7 @@
       />
       <SudokuBoutonExporterGrille :grid="sudoku.grid" />
     </div>
-    <BoutonPropagation @click="propager" />
+    <StyledBouton @click="propager"> Propager </StyledBouton>
   </div>
 </template>
 

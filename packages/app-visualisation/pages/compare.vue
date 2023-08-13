@@ -9,7 +9,7 @@
         <MusiqueSheet :grilleAccords="sudoku.grid" />
       </ClientOnly>
     </div>
-    <BoutonPropagation @click="propager" />
+    <StyledBouton @click="propager">Propager</StyledBouton>
   </div>
 </template>
 
