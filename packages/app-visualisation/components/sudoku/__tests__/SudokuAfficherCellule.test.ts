@@ -47,4 +47,17 @@ suite('SudokuAfficherCellule.test.ts', () => {
     expect(emitted('update:modelValue')[0]).toEqual([0])
     expect(inputCell.attributes).not.toHaveProperty('disabled')
   })
+
+  test('La cellule refuse une valeur non nombre', async () => {
+    const { getByRole, emitted } = render(SudokuAfficherCellule, {
+      props: {
+        modelValue: 0,
+        possibilites: [5, 4],
+      },
+    })
+    const inputCell = getByRole('textbox') as HTMLInputElement
+    await userEvent.type(inputCell, 'a')
+    expect(emitted('update:modelValue')).toEqual([[0]])
+    expect(inputCell.attributes).not.toHaveProperty('disabled')
+  })
 })
