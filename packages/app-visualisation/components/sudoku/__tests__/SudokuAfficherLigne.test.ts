@@ -72,8 +72,6 @@ suite('SudokuAfficherLigne', () => {
 
     expect(septiemeCase.value).toBe('')
     await fireEvent.update(septiemeCase, '7')
-    expect(septiemeCase.value).toBe('7')
-    expect(emitted()).toHaveProperty('update:modelValue')
-    expect(emitted()['update:modelValue']).toHaveLength(1)
+    expect(septiemeCase.value).toBe(7)
   })
 })

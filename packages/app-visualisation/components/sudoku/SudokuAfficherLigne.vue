@@ -5,8 +5,7 @@
     <SudokuAfficherCellule
       v-for="(cellule, index) in ligne"
       :key="index"
-      :model-value="cellule"
-      @update:model-value="updateLigne(index, $event)"
+      v-model="ligne[index]"
       :possibilites="possibilites[index]"
     />
   </tr>
@@ -30,13 +29,6 @@ const ligne = computed({
     emits('update:modelValue', value)
   },
 })
-
-function updateLigne(index: number, value: SudokuCellule) {
-  console.log('set', value)
-  const ligneCopie = [...ligne.value]
-  ligneCopie[index] = value
-  ligne.value = ligneCopie
-}
 </script>
 
 <style scoped></style>
