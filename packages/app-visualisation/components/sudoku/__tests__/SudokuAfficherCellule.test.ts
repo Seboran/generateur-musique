@@ -12,7 +12,7 @@ suite('SudokuAfficherCellule.test.ts', () => {
         possibilites: [],
       },
     })
-    const inputCell = getByRole('textbox') as HTMLInputElement
+    const inputCell = getByRole('spinbutton') as HTMLInputElement
     expect(inputCell.attributes).toHaveProperty('disabled')
     expect(inputCell.value).toEqual(5)
   })
@@ -24,7 +24,7 @@ suite('SudokuAfficherCellule.test.ts', () => {
         possibilites: [5, 4],
       },
     })
-    const inputCell = getByRole('textbox') as HTMLInputElement
+    const inputCell = getByRole('spinbutton') as HTMLInputElement
 
     await userEvent.type(inputCell, '5')
     expect(inputCell.value).toEqual('5')
@@ -42,7 +42,7 @@ suite('SudokuAfficherCellule.test.ts', () => {
         possibilites: [5, 4],
       },
     })
-    const inputCell = getByRole('textbox') as HTMLInputElement
+    const inputCell = getByRole('spinbutton') as HTMLInputElement
     await userEvent.type(inputCell, '3')
     expect(emitted('update:modelValue')[0]).toEqual([0])
     expect(inputCell.attributes).not.toHaveProperty('disabled')
@@ -55,9 +55,9 @@ suite('SudokuAfficherCellule.test.ts', () => {
         possibilites: [5, 4],
       },
     })
-    const inputCell = getByRole('textbox') as HTMLInputElement
+    const inputCell = getByRole('spinbutton') as HTMLInputElement
     await userEvent.type(inputCell, 'a')
-    expect(emitted('update:modelValue')).toEqual([[0]])
+    expect(emitted()).not.toHaveProperty('update:modelValue')
     expect(inputCell.attributes).not.toHaveProperty('disabled')
   })
 })

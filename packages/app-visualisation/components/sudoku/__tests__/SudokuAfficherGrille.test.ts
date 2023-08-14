@@ -39,7 +39,7 @@ suite('SudokuAfficherGrille', () => {
     })
     const lignes = getAllByRole('row')
     expect(lignes).toHaveLength(9)
-    const inputs: HTMLInputElement[] = getAllByRole('textbox')
+    const inputs: HTMLInputElement[] = getAllByRole('spinbutton')
     expect(inputs).toHaveLength(81)
     expect(inputs[0].value).toBe(1)
     expect(inputs[1].value).toBe(2)
@@ -62,7 +62,7 @@ suite('SudokuAfficherGrille', () => {
         possibilites: makePossibilitesCompletes(),
       },
     })
-    const inputs: HTMLInputElement[] = getAllByRole('textbox')
+    const inputs: HTMLInputElement[] = getAllByRole('spinbutton')
     await fireEvent.update(inputs[0], '9')
     expect(inputs[0].value).toBe(9)
   })
