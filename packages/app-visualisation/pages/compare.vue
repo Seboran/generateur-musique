@@ -2,7 +2,8 @@
   <div class="flex flex-col">
     <div class="flex flex-row space-x-5">
       <SudokuAfficherGrille
-        v-model:grid="sudoku.grid"
+        :grid="sudoku.grid"
+        @update:grid="sudoku.grid = $event"
         :possibilites="sudoku.possibilitesGrid"
       />
       <ClientOnly>
