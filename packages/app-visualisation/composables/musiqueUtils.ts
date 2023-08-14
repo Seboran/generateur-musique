@@ -16,9 +16,11 @@ export const createPartition = (notes: string[]) => `
 
 const getMesures = (notes: string[]) => {
   // split notes into measures of 4 notes
-  const measures = []
+  const measures: string[][] = []
   for (let i = 0; i < notes.length; i += 4) {
-    measures.push(notes.slice(i, i + 4))
+    const measureNotes = notes.slice(i, i + 4)
+    measureNotes.reverse()
+    measures.push(measureNotes)
   }
 
   return measures
