@@ -4,7 +4,7 @@
       <SudokuAfficherLigne
         v-for="(ligne, index) in grid"
         :key="index"
-        v-model="grid[index]"
+        :model-value="grid[index]"
         :possibilites="possibilites[index]"
       />
     </table>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { Sudoku, SudokuGrid, SudokuPossibilitesCellule } from 'lib-effondrement'
+import { SudokuGrid, SudokuPossibilitesCellule } from 'lib-effondrement'
 
 defineProps<{
   possibilites: SudokuPossibilitesCellule[][]
