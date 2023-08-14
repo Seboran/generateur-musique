@@ -7,6 +7,7 @@
       :class="{
         'bg-slate-200': !!cellule,
       }"
+      type="number"
       :disabled="!!cellule"
       name="cellule"
       :value="cellule || ''"
@@ -50,4 +51,16 @@ function update(value: Event) {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+</style>
