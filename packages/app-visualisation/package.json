@@ -20,7 +20,8 @@
     "@types/node": "^20.4.9",
     "happy-dom": "^10.9.0",
     "nuxt": "^3.6.5",
-    "nuxt-vitest": "^0.10.2"
+    "nuxt-vitest": "^0.10.2",
+    "unplugin-vue-components": "^0.25.1"
   },
   "dependencies": {
     "opensheetmusicdisplay": "^1.8.2"

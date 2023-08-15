@@ -13,6 +13,9 @@ export default defineNuxtConfig({
     {
       path: '~/components/sudoku',
     },
+    {
+      path: '~/components/styled',
+    },
     '~/components',
   ],
   vite: {},
