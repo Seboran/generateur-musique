@@ -1,13 +1,17 @@
 <template>
   <div class="flex flex-col">
     <div class="flex flex-row space-x-5">
-      <SudokuAfficherGrille
-        :grid="sudoku.grid"
-        @update:grid="sudoku.grid = $event"
-        :possibilites="sudoku.possibilitesGrid"
-      />
+      <div>
+        <SudokuAfficherGrille
+          :grid="sudoku.grid"
+          @update:grid="sudoku.grid = $event"
+          :possibilites="sudoku.possibilitesGrid"
+        />
+      </div>
       <ClientOnly>
-        <MusiqueSheet :grilleAccords="sudoku.grid" />
+        <div>
+          <MusiqueSheet :grilleAccords="sudoku.grid" />
+        </div>
       </ClientOnly>
     </div>
     <StyledBouton @click="propager">Propager</StyledBouton>

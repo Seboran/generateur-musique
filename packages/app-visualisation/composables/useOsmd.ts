@@ -5,6 +5,7 @@ import { numberToNote } from './numberToNote'
 export function useOsmd(divId: string, grilleAccords: SudokuGrid) {
   const { $osmd } = useNuxtApp()
   let osmd: ReturnType<typeof $osmd> | undefined
+  const notes = ref<string[]>([])
   watchEffect(
     async () => {
       if (!osmd) {
@@ -12,9 +13,9 @@ export function useOsmd(divId: string, grilleAccords: SudokuGrid) {
       }
 
       // Convert the chord to music notes and format them for OSMD
-      const notes = grilleAccords.flatMap((grille) => grille)!.map(numberToNote)
+      notes.value = grilleAccords.flatMap((grille) => grille)!.map(numberToNote)
 
-      const xmlString = createPartition(notes)
+      const xmlString = createPartition(notes.value)
 
       await osmd.load(xmlString)
       osmd.render()
@@ -26,4 +27,8 @@ export function useOsmd(divId: string, grilleAccords: SudokuGrid) {
   onUnmounted(() => {
     osmd?.clear()
   })
+
+  return {
+    notes,
+  }
 }
