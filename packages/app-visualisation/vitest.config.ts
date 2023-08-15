@@ -1,6 +1,10 @@
-import { defineVitestConfig } from 'nuxt-vitest/config'
+import { defineProject } from 'vitest/config'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 
-export default defineVitestConfig({
+import vue from '@vitejs/plugin-vue'
+
+export default defineProject({
   test: {
     globals: true,
     environment: 'happy-dom',
@@ -16,8 +20,30 @@ export default defineVitestConfig({
       '**/coverage/**',
       '**/lib-effondrement/**',
     ],
-    coverage: {
-      reporter: ['text', 'json', 'json-summary', 'html'],
-    },
   },
+  plugins: [
+    vue(),
+    Components({
+      dirs: ['./components'],
+    }),
+    AutoImport({
+      imports: [
+        'vitest',
+        'vue',
+        'vue-router',
+        {
+          '#imports': [
+            'useNuxtApp',
+            'useBaseFetch',
+            'useRuntimeConfig',
+            'useState',
+            'useLazyAsyncData',
+            'useLocalisationOptions',
+            'useFavoriteLocalisation',
+            'useInputValidation',
+          ],
+        },
+      ],
+    }),
+  ],
 })

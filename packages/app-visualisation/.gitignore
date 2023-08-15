@@ -24,3 +24,6 @@ logs
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+auto-imports.d.ts
+components.d.ts
