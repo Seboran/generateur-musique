@@ -2,6 +2,7 @@
   <MusiqueSheetTemplate>
     <div style="width: 100%; height: 100%" id="sheet"></div>
   </MusiqueSheetTemplate>
+  <StyledBouton class="uppercase" @click="play">jouer</StyledBouton>
 </template>
 
 <script setup lang="ts">
@@ -11,7 +12,13 @@ const props = defineProps<{
   grilleAccords: SudokuGrid
 }>()
 
-useOsmd('sheet', props.grilleAccords)
+const { notes } = useOsmd('sheet', props.grilleAccords)
+async function play() {
+  for (const note of notes.value) {
+    new Audio(`./assets/sounds/${note}.mp3`).play()
+    await new Promise((resolve) => setTimeout(resolve, 500))
+  }
+}
 </script>
 
 <style scoped>
