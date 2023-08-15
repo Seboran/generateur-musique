@@ -1,6 +1,8 @@
 <template>
-  <header>
-    <StyledBouton @click="back">Accueil</StyledBouton>
+  <header class="flex flex-row items-center justify-between">
+    <StyledBouton @click="back"> Retour arrière</StyledBouton>
+    <NuxtLink to="/"> Accueil </NuxtLink>
+    <StyledBouton>Futur menu burger</StyledBouton>
   </header>
 </template>
 

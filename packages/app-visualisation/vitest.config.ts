@@ -22,7 +22,7 @@ export default defineProject({
     ],
   },
   plugins: [
-    vue(),
+    vue({}),
     Components({
       dirs: ['./components'],
     }),
