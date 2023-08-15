@@ -37,11 +37,6 @@ function update(value: Event) {
 
   const parsedInt = parseInt(target?.value)
 
-  if (isNaN(parsedInt)) {
-    cellule.value = 0
-    return
-  }
-
   if (props.possibilites.includes(parsedInt)) {
     cellule.value = parsedInt
     return
