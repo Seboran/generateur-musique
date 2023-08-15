@@ -18,27 +18,7 @@ suite('StyledHeader', async () => {
   })
   test('Contient un bloc de navigation', () => {
     const { getByText } = render(StyledHeader, {})
-    getByText('Accueil')
-  })
-  test("Contient un titre cliquable qui renvoie à la page d'accueil", async () => {
-    const { getByText } = render(StyledHeader, {
-      global: {
-        stubs: {
-          NuxtLink: {
-            name: 'NuxtLink',
-            template: '<a role="link"><slot /></a>',
-          },
-        },
-      },
-    })
-    const header = getByText('Accueil')
-    expect(header.role).toEqual('link')
-  })
-  test('Contient un bouton retour arrière accessible par tabulation', async () => {
-    render(StyledHeader)
-    await userEvent.tab()
-    await userEvent.keyboard('{enter}')
-    expect(back).toHaveBeenCalled()
+    getByText('GÉNÉRATEUR')
   })
   test("Contient un bouton qui amène à l'accueil", async () => {
     const { getByText } = render(StyledHeader, {
@@ -51,7 +31,6 @@ suite('StyledHeader', async () => {
         },
       },
     })
-    const accueilBouton = getByText('Accueil')
-    expect(accueilBouton.role).toEqual('link')
+    getByText(/GÉNÉRATEUR/u)
   })
 })

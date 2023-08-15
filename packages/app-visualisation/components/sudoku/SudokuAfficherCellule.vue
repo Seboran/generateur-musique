@@ -1,11 +1,11 @@
 <template>
   <td
-    class="m-2 box-border h-10 w-10 border-2 border-blue-300 bg-slate-100/25 bg-clip-border text-center focus-within:bg-slate-200 focus:bg-slate-200 [&:nth-child(3n+0)]:border-r-4 [&:nth-child(3n+1)]:border-l-4"
+    class="bg-ghost_white m-2 box-border h-10 w-10 border-2 bg-clip-border text-center [&:nth-child(3n+0)]:border-r-4 [&:nth-child(3n+1)]:border-l-4"
   >
     <input
-      class="box-content h-full w-full bg-inherit bg-clip-border text-center"
+      class="bg-ghost_white box-content h-full w-full bg-clip-border text-center"
       :class="{
-        'bg-slate-200': !!cellule,
+        'bg-citrine-900': !!cellule,
       }"
       type="number"
       :disabled="!!cellule"
