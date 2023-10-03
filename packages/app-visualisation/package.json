@@ -20,7 +20,7 @@
     "@types/node": "^20.4.9",
     "happy-dom": "^12.0.0",
     "nuxt": "^3.6.5",
-    "nuxt-vitest": "^0.10.2",
+    "nuxt-vitest": "^0.11.0",
     "unplugin-vue-components": "^0.25.1"
   },
   "dependencies": {
