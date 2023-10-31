@@ -1,4 +1,4 @@
-import { Sudoku, SudokuGrid } from 'lib-effondrement'
+import { Sudoku, type SudokuGrid } from 'lib-effondrement'
 
 export function useSudokuGrid() {
   const initialSudokuGrid: SudokuGrid = [

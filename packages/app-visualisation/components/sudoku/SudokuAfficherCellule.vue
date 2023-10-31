@@ -17,7 +17,10 @@
 </template>
 
 <script setup lang="ts">
-import { SudokuCellule, SudokuPossibilitesCellule } from 'lib-effondrement'
+import {
+  type SudokuCellule,
+  type SudokuPossibilitesCellule,
+} from 'lib-effondrement'
 const props = defineProps<{
   modelValue: SudokuCellule
   possibilites: SudokuPossibilitesCellule

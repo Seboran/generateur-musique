@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { SudokuGrid } from 'lib-effondrement'
+import { type SudokuGrid } from 'lib-effondrement'
 defineProps<{
   grilleAccords: SudokuGrid
 }>()

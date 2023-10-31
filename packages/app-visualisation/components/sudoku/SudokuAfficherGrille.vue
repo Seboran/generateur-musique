@@ -12,7 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import { SudokuGrid, SudokuPossibilitesCellule } from 'lib-effondrement'
+import {
+  type SudokuGrid,
+  type SudokuPossibilitesCellule,
+} from 'lib-effondrement'
 
 defineProps<{
   possibilites: SudokuPossibilitesCellule[][]

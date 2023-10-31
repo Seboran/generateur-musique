@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { Sudoku, SudokuGrid } from 'lib-effondrement'
+import { Sudoku, type SudokuGrid } from 'lib-effondrement'
 const initialSudokuGrid: SudokuGrid = [
   [0, 0, 0, 0, 7, 0, 0, 8, 0],
   [2, 7, 4, 9, 0, 8, 0, 0, 5],
