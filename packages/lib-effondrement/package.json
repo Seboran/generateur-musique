@@ -13,7 +13,7 @@
   "devDependencies": {
     "@types/node": "^20.2.5",
     "@types/prettier": "^2.7.2",
-    "ctix": "^1.8.2",
+    "ctix": "^2.0.0",
     "nodemon": "^3.0.0",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1"
