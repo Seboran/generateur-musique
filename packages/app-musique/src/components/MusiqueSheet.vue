@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { useOsmd } from '@/composables/useOsmd'
-import { type SudokuGrid } from 'lib-effondrement'
+import { type SudokuGrid } from 'lib-sudoku'
 import MusiqueSheetTemplate from './MusiqueSheetTemplate.vue'
 import { StyledBouton } from 'lib-style'
 

@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import 'lib-style/dist/style.css'
 
-import { Sudoku, type SudokuGrid } from 'lib-effondrement'
+import { Sudoku, type SudokuGrid } from 'lib-sudoku'
 import { StyledBouton } from 'lib-style'
 import { ref } from 'vue'
 import AppLayout from './components/AppLayout.vue'

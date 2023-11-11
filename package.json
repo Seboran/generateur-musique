@@ -38,6 +38,8 @@
   },
   "dependencies": {
     "lib-effondrement": "workspace:*",
-    "lib-style": "workspace:*"
+    "lib-style": "workspace:*",
+    "lib-musique": "workspace:*",
+    "lib-sudoku": "workspace:*"
   }
 }

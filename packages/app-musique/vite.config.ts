@@ -13,6 +13,6 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
-    dedupe: ['lib-effondrement'],
+    dedupe: ['lib-sudoku'],
   },
 })
