@@ -37,6 +37,7 @@
     "husky": "^8.0.3"
   },
   "dependencies": {
-    "lib-effondrement": "workspace:*"
+    "lib-effondrement": "workspace:*",
+    "lib-style": "workspace:*"
   }
 }

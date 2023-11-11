@@ -1,5 +1,7 @@
 <template>
-  <StyledHeader />
+  <StyledHeader>
+    <b>SUDOKU</b>
+  </StyledHeader>
   <div class="bg-ghost_white flex min-h-screen justify-center pt-10">
     <Head>
       <Title>Sudoku</Title>
@@ -9,5 +11,5 @@
 </template>
 
 <script setup lang="ts">
-import StyledHeader from './styled/StyledHeader.vue'
+import { StyledHeader } from 'lib-style'
 </script>

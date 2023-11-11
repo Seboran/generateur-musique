@@ -13,9 +13,11 @@
 </template>
 
 <script setup lang="ts">
+import 'lib-style/dist/style.css'
+
 import AppLayout from '@/components/AppLayout.vue'
 import { useSudokuGrid } from '@/composables/useSudokuGrid'
-import StyledBouton from './components/styled/StyledBouton.vue'
+import { StyledBouton } from 'lib-style'
 import SudokuAfficherGrille from './components/sudoku/SudokuAfficherGrille.vue'
 const { sudoku, propager } = useSudokuGrid()
 </script>
