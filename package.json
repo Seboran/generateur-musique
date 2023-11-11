@@ -14,7 +14,6 @@
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:playwright": "pnpm -C ./packages/app-e2e run test:playwright",
     "format": "prettier --write --cache .",
     "format:check": "prettier --check .",
     "coverage": "vitest run --coverage",
@@ -25,7 +24,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.36.2",
     "@vitest/coverage-v8": "^0.34.3",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.5.2",

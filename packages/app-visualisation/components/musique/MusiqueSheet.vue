@@ -15,8 +15,10 @@ const props = defineProps<{
 const { notes } = useOsmd('sheet', props.grilleAccords)
 async function play() {
   for (const note of notes.value) {
-    new Audio(`./assets/sounds/${note}.mp3`).play()
-    await new Promise((resolve) => setTimeout(resolve, 500))
+    new Audio(`./assets/sounds/Eb5.mp3`).play()
+    new Audio(`./assets/sounds/C4.mp3`).play()
+    new Audio(`./assets/sounds/G4.mp3`).play()
+    await new Promise((resolve) => setTimeout(resolve, 2000))
   }
 }
 </script>
