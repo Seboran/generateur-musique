@@ -7,19 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      lib-effondrement:
-        specifier: workspace:*
-        version: link:packages/lib-effondrement
-      lib-musique:
-        specifier: workspace:*
-        version: link:packages/lib-musique
-      lib-style:
-        specifier: workspace:*
-        version: link:packages/lib-style
-      lib-sudoku:
-        specifier: workspace:*
-        version: link:packages/lib-sudoku
     optionalDependencies:
       '@commitlint/cli':
         specifier: ^18.4.3
@@ -52,6 +39,15 @@ importers:
 
   packages/app-musique:
     dependencies:
+      lib-musique:
+        specifier: workspace:*
+        version: link:../lib-musique
+      lib-style:
+        specifier: workspace:*
+        version: link:../lib-style
+      lib-sudoku:
+        specifier: workspace:*
+        version: link:../lib-sudoku
       opensheetmusicdisplay:
         specifier: ^1.8.4
         version: 1.8.4
@@ -107,6 +103,12 @@ importers:
 
   packages/app-sudoku:
     dependencies:
+      lib-style:
+        specifier: workspace:*
+        version: link:../lib-style
+      lib-sudoku:
+        specifier: workspace:*
+        version: link:../lib-sudoku
       vue:
         specifier: ^3.3.11
         version: 3.3.11(typescript@5.3.3)
@@ -116,7 +118,7 @@ importers:
         version: 14.5.1(@testing-library/dom@9.3.3)
       '@testing-library/vue':
         specifier: ^8.0.1
-        version: 8.0.1(@vue/compiler-sfc@3.3.8)(vue@3.3.11)
+        version: 8.0.1(@vue/compiler-sfc@3.3.11)(vue@3.3.11)
       '@tsconfig/node18':
         specifier: ^18.2.2
         version: 18.2.2
@@ -188,25 +190,25 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^20.2.5
-        version: 20.9.0
+        version: 20.10.4
       '@types/prettier':
         specifier: ^2.7.2
-        version: 2.7.2
+        version: 2.7.3
       ctix:
         specifier: ^2.0.0
-        version: 2.0.0
+        version: 2.3.0
       nodemon:
         specifier: ^3.0.0
         version: 3.0.0
       prettier:
         specifier: ^3.0.0
-        version: 3.0.3
+        version: 3.1.0
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.9.0)(typescript@5.2.2)
+        version: 10.9.1(@types/node@20.10.4)(typescript@5.3.3)
       vitest:
         specifier: ^0.34.6
-        version: 0.34.6(@vitest/ui@0.34.6)(happy-dom@12.2.0)(jsdom@22.1.0)
+        version: 0.34.6(@vitest/ui@1.0.2)(happy-dom@12.2.0)(jsdom@22.1.0)
 
   packages/lib-style:
     dependencies:
@@ -273,25 +275,25 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^20.2.5
-        version: 20.9.0
+        version: 20.10.4
       '@types/prettier':
         specifier: ^2.7.2
-        version: 2.7.2
+        version: 2.7.3
       ctix:
         specifier: ^2.0.0
-        version: 2.0.0
+        version: 2.3.0
       nodemon:
         specifier: ^3.0.0
         version: 3.0.0
       prettier:
         specifier: ^3.0.0
-        version: 3.0.3
+        version: 3.1.0
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.9.0)(typescript@5.2.2)
+        version: 10.9.1(@types/node@20.10.4)(typescript@5.3.3)
       vitest:
         specifier: ^0.34.6
-        version: 0.34.6(@vitest/ui@0.34.6)(happy-dom@12.2.0)(jsdom@22.1.0)
+        version: 0.34.6(@vitest/ui@1.0.2)(happy-dom@12.2.0)(jsdom@22.1.0)
 
 packages:
 
@@ -1278,7 +1280,7 @@ packages:
       '@testing-library/dom': 9.3.3
     dev: true
 
-  /@testing-library/vue@8.0.1(@vue/compiler-sfc@3.3.8)(vue@3.3.11):
+  /@testing-library/vue@8.0.1(@vue/compiler-sfc@3.3.11)(vue@3.3.11):
     resolution: {integrity: sha512-l51ZEpjTQ6glq3wM+asQ1GbKJMGcxwgHEygETx0aCRN4TjFEGvMZy4YdWKs/y7bu4bmLrxcxhbEPP7iPSW/2OQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1287,7 +1289,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.2
       '@testing-library/dom': 9.3.3
-      '@vue/compiler-sfc': 3.3.8
+      '@vue/compiler-sfc': 3.3.11
       '@vue/test-utils': 2.4.3(vue@3.3.11)
       vue: 3.3.11(typescript@5.3.3)
     transitivePeerDependencies:
@@ -1357,7 +1359,7 @@ packages:
   /@types/jsdom@21.1.5:
     resolution: {integrity: sha512-sBK/3YjS3uuPj+HzZyhB4GGTnFmk0mdyQfhzZ/sqs9ciyG41QJdZZdwcPa6OfW97OTNTwl5tBAsfEOm/dui9pQ==}
     dependencies:
-      '@types/node': 18.18.9
+      '@types/node': 20.10.4
       '@types/tough-cookie': 4.0.5
       parse5: 7.1.2
     dev: true
@@ -1392,6 +1394,10 @@ packages:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
     requiresBuild: true
 
+  /@types/prettier@2.7.3:
+    resolution: {integrity: sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==}
+    dev: true
+
   /@types/tough-cookie@4.0.5:
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
     dev: true
@@ -1407,7 +1413,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.0(@types/node@20.9.0)
+      vite: 4.5.0(@types/node@18.18.9)
       vue: 3.3.8(typescript@5.2.2)
     dev: true
 
@@ -5918,10 +5924,6 @@ packages:
   /stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  /std-env@3.4.3:
-    resolution: {integrity: sha512-f9aPhy8fYBuMN+sNfakZV18U39PbalgjXG3lLB9WkaYTxijru61wb57V9wxxNthXM5Sd88ETBWi29qLAsHO52Q==}
-    dev: true
-
   /std-env@3.6.0:
     resolution: {integrity: sha512-aFZ19IgVmhdB2uX599ve2kE6BIE3YMnQ6Gp6BURhW/oIzpXGKr878TQfAQZn1+i0Flcc/UKUy1gOlcfaUBCryg==}
 
@@ -6316,8 +6318,8 @@ packages:
       code-block-writer: 12.0.0
     dev: true
 
-  /ts-node@10.9.2(@types/node@20.10.4)(typescript@5.3.3):
-    resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
+  /ts-node@10.9.1(@types/node@20.10.4)(typescript@5.3.3):
+    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
@@ -6347,8 +6349,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.9.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+  /ts-node@10.9.2(@types/node@20.10.4)(typescript@5.3.3):
+    resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
@@ -6366,14 +6368,14 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.9.0
+      '@types/node': 20.10.4
       acorn: 8.11.2
       acorn-walk: 8.3.0
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.2.2
+      typescript: 5.3.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -6574,7 +6576,7 @@ packages:
     resolution: {integrity: sha512-LwHQDCc257Lwju35BhyZuPYcVWu0hIUqEdM7j9+B+bq91bSelssnAG5JR8odTUtgGuwwvGwLhXw37wtmHNCS6Q==}
     dev: false
 
-  /vite-node@0.34.6(@types/node@18.18.9):
+  /vite-node@0.34.6(@types/node@20.10.4):
     resolution: {integrity: sha512-nlBMJ9x6n7/Amaz6F3zJ97EBwR2FkzhBRxF5e+jE6LA3yi6Wtc2lyTij1OnDMIr34v5g/tVQtsVAzhT0jc5ygA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -6584,7 +6586,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.5.0(@types/node@18.18.9)
+      vite: 5.0.7(@types/node@20.10.4)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6801,7 +6803,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.10
       '@types/chai-subset': 1.3.5
-      '@types/node': 18.18.9
+      '@types/node': 20.10.4
       '@vitest/expect': 0.34.6
       '@vitest/runner': 0.34.6
       '@vitest/snapshot': 0.34.6
@@ -6819,12 +6821,12 @@ packages:
       magic-string: 0.30.5
       pathe: 1.1.1
       picocolors: 1.0.0
-      std-env: 3.4.3
+      std-env: 3.6.0
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 4.5.0(@types/node@18.18.9)
-      vite-node: 0.34.6(@types/node@18.18.9)
+      vite: 5.0.7(@types/node@20.10.4)
+      vite-node: 0.34.6(@types/node@20.10.4)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "build": "pnpm -r --filter='./packages/*' run build",
+    "build": "pnpm -r run build",
     "preview": "pnpm -C ./packages/app-visualisation run preview",
     "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "test": "vitest run",
@@ -35,11 +35,5 @@
     "@commitlint/config-conventional": "^18.4.3",
     "@vitest/ui": "^1.0.2",
     "husky": "^8.0.3"
-  },
-  "dependencies": {
-    "lib-effondrement": "workspace:*",
-    "lib-style": "workspace:*",
-    "lib-musique": "workspace:*",
-    "lib-sudoku": "workspace:*"
   }
 }
