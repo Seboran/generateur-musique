@@ -8,9 +8,6 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'nuxt-vitest'],
   components: [
     {
-      path: '~/components/musique',
-    },
-    {
       path: '~/components/sudoku',
     },
     {
