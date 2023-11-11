@@ -1,1 +1,3 @@
-export default ['packages/*', '!packages/app-e2e/**']
+import { defineWorkspace } from 'vitest/config'
+
+export default defineWorkspace(['packages/*/vitest.config.ts'])
