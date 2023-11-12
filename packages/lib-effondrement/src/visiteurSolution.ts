@@ -1,3 +1,3 @@
-export default interface VisiteurSolution<Solution, ReponseVisiteur> {
-  visit(solution: Solution): ReponseVisiteur
+export default interface VisiteurSolution<TSolution, UReponseVisiteur> {
+  visit(solution: TSolution): UReponseVisiteur
 }

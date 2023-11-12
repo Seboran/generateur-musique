@@ -1,7 +1,17 @@
 import { Regle } from './regle'
 
-export abstract class Superposition<T> {
-  public _solutions: T[] = []
+export class Superposition<ValeursSuperposition, ContexteProbleme> {
+  constructor(
+    public solutions: ValeursSuperposition[] = [],
+    public contexte: ContexteProbleme,
+  ) {}
 
-  abstract effondrer(regles: Regle<T>[]): void
+  appliquer(
+    regles: Regle<ValeursSuperposition, ContexteProbleme>[],
+  ): Superposition<ValeursSuperposition, ContexteProbleme> {
+    const nouvellesSolutions = this.solutions.filter((solution) =>
+      regles.some((regle) => regle.visit(this)),
+    )
+    return new Superposition(nouvellesSolutions, this.contexte)
+  }
 }
