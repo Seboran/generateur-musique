@@ -2,7 +2,7 @@ import { Regle } from './models/regle'
 import { Superposition } from './superposition'
 import VisiteurSolution from './interfaces/visiteurSolution'
 
-export abstract class PropagateurSolution<
+export class PropagateurSolution<
   ValeursSuperposition,
   ResultatContextualisation,
 > implements

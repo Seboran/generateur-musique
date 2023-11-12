@@ -25,12 +25,7 @@ type TypeValeursNombres = Partial<{
   valeurPrecedente?: number
 }>
 
-class PropagateurMultipleDuPremier extends PropagateurSolution<
-  number,
-  TypeValeursNombres
-> {}
-
-describe('Propager', () => {
+describe('Solution', () => {
   test('doit propager les solutions possibles sur la règle les nombres doivent être un multiple du premier de la liste', () => {
     class MultipleDuPremier extends Solution<
       number,
@@ -66,9 +61,10 @@ describe('Propager', () => {
     }
     const multipleDuPremier = new MultipleDuPremier()
 
-    const propagateurSolutions = new PropagateurMultipleDuPremier([
-      new RegleMultipleDuPremier(),
-    ])
+    const propagateurSolutions = new PropagateurSolution<
+      number,
+      TypeValeursNombres
+    >([new RegleMultipleDuPremier()])
 
     const meilleuresSolutions = multipleDuPremier.accept(propagateurSolutions)
 
@@ -138,10 +134,10 @@ describe('Propager', () => {
       }
     }
 
-    const propagateurSolutions = new PropagateurMultipleDuPremier([
-      new RegleMultipleDuPremier(),
-      new StrictementSuperieur(),
-    ])
+    const propagateurSolutions = new PropagateurSolution<
+      number,
+      TypeValeursNombres
+    >([new RegleMultipleDuPremier(), new StrictementSuperieur()])
 
     multipleDuPremier.valeurs = multipleDuPremier.accept(propagateurSolutions)
     const meilleuresSolutions = multipleDuPremier.accept(propagateurSolutions)
