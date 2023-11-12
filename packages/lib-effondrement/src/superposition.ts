@@ -1,10 +1,9 @@
-import { Regle } from './regle'
+import { Regle } from './models/regle'
 
-export class Superposition<ValeursSuperposition, ContexteProbleme> {
+export class Superposition<ValeursSuperposition, ResultatContextualisation> {
   constructor(
     public solutions: ValeursSuperposition[] = [],
-    public contexte: ContexteProbleme,
-    private contextualisation?: any,
+    public contextualisation: () => ResultatContextualisation,
   ) {
     Object.defineProperty(this, 'contextualisation', {
       value: contextualisation,
@@ -14,18 +13,14 @@ export class Superposition<ValeursSuperposition, ContexteProbleme> {
   }
 
   appliquer(
-    regles: Regle<ValeursSuperposition, ContexteProbleme>[],
-  ): Superposition<ValeursSuperposition, ContexteProbleme> {
+    regles: Regle<ValeursSuperposition, ResultatContextualisation>[],
+  ): Superposition<ValeursSuperposition, ResultatContextualisation> {
     return new Superposition(
       regles.reduce(
         (accumulator, regle) =>
-          regle.visit(
-            new Superposition(accumulator, this.contexte),
-            this.contextualisation,
-          ),
+          regle.visit(new Superposition(accumulator, this.contextualisation)),
         this.solutions,
       ),
-      this.contexte,
       this.contextualisation,
     )
   }

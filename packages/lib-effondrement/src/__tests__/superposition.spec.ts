@@ -1,14 +1,14 @@
 import { describe, test, expect } from 'vitest'
 import { Superposition } from '../superposition'
-import { Regle } from '../regle'
+import { Regle } from '../models/regle'
 
 describe('Superposition', () => {
   test("Tester une superposition de nombres qui n'accepte que les nombres pairs", () => {
     const TestSuperpositionNombresPairs = new Superposition(
       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      {},
+      () => {},
     )
-    class RegleNombresPairs extends Regle<number, {}> {
+    class RegleNombresPairs extends Regle<number, void> {
       visit(superposition: Superposition<number, {}>): number[] {
         return superposition.solutions.filter((n) => n % 2 === 0)
       }
@@ -22,15 +22,13 @@ describe('Superposition', () => {
   test('Tester une superposition de nombres qui doivent rester inférieurs à une valeur du contexte', async () => {
     const TestSuperpositionSeuil = new Superposition(
       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      {
-        seuil: 5,
-      },
+      () => 5,
     )
 
-    class RegleSeuil extends Regle<number, { seuil: number }> {
-      visit(superposition: Superposition<number, { seuil: number }>): number[] {
+    class RegleSeuil extends Regle<number, number> {
+      visit(superposition: Superposition<number, number>): number[] {
         return superposition.solutions.filter(
-          (n) => n < superposition.contexte.seuil,
+          (n) => n < superposition.contextualisation(),
         )
       }
     }
@@ -43,16 +41,14 @@ describe('Superposition', () => {
     const contexte = [1, 2, 3, 4]
     const TestSuperpositionCroissantContextualise = new Superposition(
       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      contexte,
       () => contexte[2],
     )
 
-    class RegleCroissant extends Regle<number, number[]> {
-      visit(
-        superposition: Superposition<number, number[]>,
-        valeurPrecedente: () => number,
-      ): number[] {
-        return superposition.solutions.filter((n) => n >= valeurPrecedente())
+    class RegleCroissant extends Regle<number, number> {
+      visit(superposition: Superposition<number, number>): number[] {
+        return superposition.solutions.filter(
+          (n) => n >= superposition.contextualisation(),
+        )
       }
     }
 

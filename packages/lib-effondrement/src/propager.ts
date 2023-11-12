@@ -1,12 +1,25 @@
-import { Regle } from './regle'
+import { Regle } from './models/regle'
 import { Superposition } from './superposition'
-import VisiteurSolution from './visiteurSolution'
+import VisiteurSolution from './interfaces/visiteurSolution'
 
-export abstract class PropagateurSolution<T, U>
-  implements VisiteurSolution<Superposition<T, U>[], Superposition<T, U>[]>
+export abstract class PropagateurSolution<
+  ValeursSuperposition,
+  ResultatContextualisation,
+> implements
+    VisiteurSolution<
+      Superposition<ValeursSuperposition, ResultatContextualisation>[],
+      Superposition<ValeursSuperposition, ResultatContextualisation>[]
+    >
 {
-  constructor(protected regles: Regle<T, U>[]) {}
-  visit(solutionSpace: Superposition<T, U>[]): Superposition<T, U>[] {
+  constructor(
+    protected regles: Regle<ValeursSuperposition, ResultatContextualisation>[],
+  ) {}
+  visit(
+    solutionSpace: Superposition<
+      ValeursSuperposition,
+      ResultatContextualisation
+    >[],
+  ): Superposition<ValeursSuperposition, ResultatContextualisation>[] {
     return solutionSpace.map((solution) => solution.appliquer(this.regles))
   }
 }

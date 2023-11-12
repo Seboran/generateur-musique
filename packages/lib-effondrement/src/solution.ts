@@ -1,15 +1,26 @@
 import { PropagateurSolution } from './propager'
 import { Superposition } from './superposition'
 
-export abstract class Solution<T, U> {
+export abstract class Solution<
+  ValeursSuperposition,
+  ResultatContextualisation,
+  Contexte,
+> {
   constructor(
-    public valeurs: Superposition<T, U>[],
-    public contexte: U,
+    public valeurs: Superposition<
+      ValeursSuperposition,
+      ResultatContextualisation
+    >[],
+    public contexte: Contexte,
   ) {}
-  public accept(visiteur: PropagateurSolution<T, U>): Superposition<T, U>[] {
+  public accept(
+    visiteur: PropagateurSolution<
+      ValeursSuperposition,
+      ResultatContextualisation
+    >,
+  ): Superposition<ValeursSuperposition, ResultatContextualisation>[] {
     this.valeurs = visiteur.visit(this.valeurs)
     this.setContexte()
-    this.valeurs.forEach((solution) => (solution.contexte = this.contexte))
     return this.valeurs
   }
 
