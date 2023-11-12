@@ -1,6 +1,6 @@
 import { Regle } from './models/regle'
 import { Superposition } from './superposition'
-import VisiteurSolution from './interfaces/visiteurSolution'
+import type VisiteurSolution from './interfaces/visiteurSolution'
 
 export class PropagateurSolution<
   ValeursSuperposition,

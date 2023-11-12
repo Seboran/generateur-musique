@@ -1,5 +1,5 @@
 import { Superposition } from '../superposition'
-import VisiteurSolution from '../interfaces/visiteurSolution'
+import type VisiteurSolution from '../interfaces/visiteurSolution'
 
 export abstract class Regle<ValeursSuperposition, ResultatContextualisation>
   implements

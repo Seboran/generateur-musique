@@ -272,6 +272,10 @@ importers:
         version: 1.8.22(typescript@5.2.2)
 
   packages/lib-sudoku:
+    dependencies:
+      lib-effondrement:
+        specifier: '*'
+        version: link:../lib-effondrement
     devDependencies:
       '@types/node':
         specifier: ^20.2.5

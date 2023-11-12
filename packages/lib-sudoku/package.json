@@ -19,6 +19,9 @@
     "ts-node": "^10.9.1",
     "vitest": "^0.34.6"
   },
+  "dependencies": {
+    "lib-effondrement": "*"
+  },
   "files": [
     "dist"
   ]
