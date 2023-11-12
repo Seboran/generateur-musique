@@ -23,7 +23,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   modelValue: SudokuCellule
-  possibilites: SudokuPossibilitesCellule
+  possibilites: SudokuCellule[]
 }>()
 
 const emit = defineEmits<{

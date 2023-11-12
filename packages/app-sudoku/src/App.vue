@@ -3,11 +3,13 @@
     <div>
       <div>
         <SudokuAfficherGrille
-          v-model:grid="sudoku.grid"
-          :possibilites="sudoku.possibilitesGrid"
+          v-model:grid="sudoku.contexte"
+          :possibilites="
+            arrayToGrid(sudoku.valeurs.map(({ solutions }) => solutions))
+          "
         />
       </div>
-      <StyledBouton @click="propager"> Propager </StyledBouton>
+      <StyledBouton @click="propager"> RÉSOUDRE ! </StyledBouton>
     </div>
   </AppLayout>
 </template>
@@ -20,4 +22,12 @@ import { useSudokuGrid } from '@/composables/useSudokuGrid'
 import { StyledBouton } from 'lib-style'
 import SudokuAfficherGrille from './components/sudoku/SudokuAfficherGrille.vue'
 const { sudoku, propager } = useSudokuGrid()
+
+function arrayToGrid<T>(list: T[]): T[][] {
+  const grid: T[][] = []
+  for (let i = 0; i < 9; i++) {
+    grid.push(list.slice(i * 9, (i + 1) * 9))
+  }
+  return grid
+}
 </script>

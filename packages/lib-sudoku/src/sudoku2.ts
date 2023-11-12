@@ -1,7 +1,10 @@
 import { Solution, Superposition } from 'lib-effondrement'
-import { SudokuCellule, SudokuGrid } from './sudoku'
-import { ResultatContextualisationSudoku } from './models/resultatContextualisation.model'
+import { type ResultatContextualisationSudoku } from './models/resultatContextualisation.model'
 import { arrayToGrid, gridToArray } from './utils/gridToArray'
+
+export type SudokuCellule = number | null
+export type SudokuGrid = SudokuCellule[][]
+export type SudokuPossibilitesCellule = number[]
 
 export class Sudoku2 extends Solution<
   SudokuCellule,

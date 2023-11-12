@@ -1,6 +1,6 @@
 import { Regle, Superposition } from 'lib-effondrement'
-import { SudokuCellule } from '../sudoku'
-import { ResultatContextualisationSudoku } from '../models/resultatContextualisation.model'
+import { type SudokuCellule } from '../sudoku2'
+import { type ResultatContextualisationSudoku } from '../models/resultatContextualisation.model'
 import { PropagateurSolution } from 'lib-effondrement/src/propager'
 
 export class RegleLigne
