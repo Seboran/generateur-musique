@@ -11,13 +11,12 @@
     "prepublish": "ctix create --overwrite --useRootDir && tsc"
   },
   "devDependencies": {
-    "@types/node": "^20.2.5",
-    "@types/prettier": "^2.7.2",
-    "ctix": "^2.0.0",
-    "nodemon": "^3.0.0",
-    "prettier": "^3.0.0",
-    "ts-node": "^10.9.1",
-    "vitest": "^0.34.6"
+    "@types/node": "^20.10.4",
+    "ctix": "^2.3.0",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "vitest": "^1.0.2"
   },
   "files": [
     "dist"
