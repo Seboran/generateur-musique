@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "opensheetmusicdisplay": "^1.8.4",
-    "vue": "^3.3.11"
+    "vue": "^3.3.11",
+    "lib-musique": "workspace:*",
+    "lib-style": "workspace:*",
+    "lib-sudoku": "workspace:*"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",

@@ -8,11 +8,16 @@
 </template>
 
 <script setup lang="ts">
-import { Sudoku, type SudokuGrid } from 'lib-effondrement'
-import { ref } from 'vue'
+import 'lib-style/dist/style.css'
+
+import { Sudoku, type SudokuGrid } from 'lib-sudoku'
+import { StyledBouton } from 'lib-style'
+import { defineAsyncComponent, ref } from 'vue'
 import AppLayout from './components/AppLayout.vue'
-import MusiqueSheet from './components/MusiqueSheet.vue'
-import StyledBouton from './components/styled/StyledBouton.vue'
+
+const MusiqueSheet = defineAsyncComponent(
+  () => import('./components/MusiqueSheet.vue'),
+)
 const initialSudokuGrid: SudokuGrid = [
   [0, 0, 0, 0, 7, 0, 0, 8, 0],
   [2, 7, 4, 9, 0, 8, 0, 0, 5],

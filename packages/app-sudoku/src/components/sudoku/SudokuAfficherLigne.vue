@@ -12,14 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import {
-  type SudokuCellule,
-  type SudokuPossibilitesCellule,
-} from 'lib-effondrement'
+import { type SudokuCellule, type SudokuPossibilitesCellule } from 'lib-sudoku'
 import SudokuAfficherCellule from './SudokuAfficherCellule.vue'
 
 defineProps<{
-  possibilites: SudokuPossibilitesCellule[]
+  possibilites: SudokuCellule[][]
   modelValue: SudokuCellule[]
 }>()
 

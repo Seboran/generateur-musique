@@ -17,16 +17,13 @@
 </template>
 
 <script setup lang="ts">
-import {
-  type SudokuCellule,
-  type SudokuPossibilitesCellule,
-} from 'lib-effondrement'
+import { type SudokuCellule, type SudokuPossibilitesCellule } from 'lib-sudoku'
 
 import { computed } from 'vue'
 
 const props = defineProps<{
   modelValue: SudokuCellule
-  possibilites: SudokuPossibilitesCellule
+  possibilites: SudokuCellule[]
 }>()
 
 const emit = defineEmits<{

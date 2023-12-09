@@ -7,9 +7,9 @@
 
 <script setup lang="ts">
 import { useOsmd } from '@/composables/useOsmd'
-import { type SudokuGrid } from 'lib-effondrement'
+import { StyledBouton } from 'lib-style'
+import { type SudokuGrid } from 'lib-sudoku'
 import MusiqueSheetTemplate from './MusiqueSheetTemplate.vue'
-import StyledBouton from './styled/StyledBouton.vue'
 
 const props = defineProps<{
   grilleAccords: SudokuGrid
