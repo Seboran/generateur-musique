@@ -18,9 +18,6 @@ export function genererSolutionProcedurale<
     ValeursSuperposition,
     ResultatContextualisation
   >,
-  fonctionDeChoix: (
-    ...args: any[]
-  ) => Superposition<ValeursSuperposition, ResultatContextualisation>,
 ): void {
   function isToutesSuperpositionsEffondrees(
     superpositions: Superposition<
