@@ -191,9 +191,6 @@ importers:
       '@types/node':
         specifier: ^20.10.6
         version: 20.10.6
-      '@types/prettier':
-        specifier: ^3.0.0
-        version: 3.0.0
       ctix:
         specifier: ^2.3.0
         version: 2.3.0
@@ -280,9 +277,6 @@ importers:
       '@types/node':
         specifier: ^20.10.6
         version: 20.10.6
-      '@types/prettier':
-        specifier: ^3.0.0
-        version: 3.0.0
       ctix:
         specifier: ^2.3.0
         version: 2.3.0
@@ -1184,13 +1178,6 @@ packages:
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
     requiresBuild: true
-
-  /@types/prettier@3.0.0:
-    resolution: {integrity: sha512-mFMBfMOz8QxhYVbuINtswBp9VL2b4Y0QqYHwqLz3YbgtfAcat2Dl6Y1o4e22S/OVE6Ebl9m7wWiMT2lSbAs1wA==}
-    deprecated: This is a stub types definition. prettier provides its own type definitions, so you do not need this installed.
-    dependencies:
-      prettier: 3.1.1
-    dev: true
 
   /@types/tough-cookie@4.0.5:
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
