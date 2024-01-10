@@ -77,8 +77,8 @@ importers:
         specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.32)
       happy-dom:
-        specifier: ^12.10.3
-        version: 12.10.3
+        specifier: ^13.0.0
+        version: 13.0.0
       npm-run-all2:
         specifier: ^6.1.1
         version: 6.1.1
@@ -96,7 +96,7 @@ importers:
         version: 5.0.10(@types/node@20.10.6)
       vitest:
         specifier: ^1.1.1
-        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@12.10.3)(jsdom@23.0.1)
+        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@13.0.0)(jsdom@23.0.1)
       vue-tsc:
         specifier: ^1.8.27
         version: 1.8.27(typescript@5.3.3)
@@ -160,7 +160,7 @@ importers:
         version: 5.0.10(@types/node@20.10.6)
       vitest:
         specifier: ^1.1.1
-        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@12.10.3)(jsdom@23.0.1)
+        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@13.0.0)(jsdom@23.0.1)
       vue-tsc:
         specifier: ^1.8.27
         version: 1.8.27(typescript@5.3.3)
@@ -184,7 +184,7 @@ importers:
         version: 10.9.2(@types/node@20.10.6)(typescript@5.3.3)
       vitest:
         specifier: ^1.1.1
-        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@12.10.3)(jsdom@23.0.1)
+        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@13.0.0)(jsdom@23.0.1)
 
   packages/lib-musique:
     devDependencies:
@@ -205,7 +205,7 @@ importers:
         version: 10.9.2(@types/node@20.10.6)(typescript@5.3.3)
       vitest:
         specifier: ^1.1.1
-        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@12.10.3)(jsdom@23.0.1)
+        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@13.0.0)(jsdom@23.0.1)
 
   packages/lib-style:
     dependencies:
@@ -235,8 +235,8 @@ importers:
         specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.32)
       happy-dom:
-        specifier: ^12.10.3
-        version: 12.10.3
+        specifier: ^13.0.0
+        version: 13.0.0
       jsdom:
         specifier: ^23.0.1
         version: 23.0.1
@@ -263,7 +263,7 @@ importers:
         version: 3.7.0(@types/node@20.10.6)(typescript@5.3.3)(vite@5.0.10)
       vitest:
         specifier: ^1.1.1
-        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@12.10.3)(jsdom@23.0.1)
+        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@13.0.0)(jsdom@23.0.1)
       vue-tsc:
         specifier: ^1.8.27
         version: 1.8.27(typescript@5.3.3)
@@ -291,7 +291,7 @@ importers:
         version: 10.9.2(@types/node@20.10.6)(typescript@5.3.3)
       vitest:
         specifier: ^1.1.1
-        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@12.10.3)(jsdom@23.0.1)
+        version: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@13.0.0)(jsdom@23.0.1)
 
 packages:
 
@@ -2862,8 +2862,8 @@ packages:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     requiresBuild: true
 
-  /happy-dom@12.10.3:
-    resolution: {integrity: sha512-JzUXOh0wdNGY54oKng5hliuBkq/+aT1V3YpTM+lrN/GoLQTANZsMaIvmHiHe612rauHvPJnDZkZ+5GZR++1Abg==}
+  /happy-dom@13.0.0:
+    resolution: {integrity: sha512-R0j/6qco6wmihOKmelRGt6Coao9gDNEkhcZ8fB73zzr7qo8EaM+BBSmfe2f2hBhC81dykLVVZ1ONcI+zSRoWMQ==}
     dependencies:
       css.escape: 1.5.1
       entities: 4.5.0
@@ -5288,6 +5288,7 @@ packages:
 
   /spdx-license-ids@3.0.16:
     resolution: {integrity: sha512-eWN+LnM3GR6gPu35WxNgbGl8rmY1AEmoMDvL/QD6zYmPWgywxWqJWNdLGT+ke8dKNWrcYgYjPpG5gbTfghP8rw==}
+    requiresBuild: true
 
   /split2@3.2.2:
     resolution: {integrity: sha512-9NThjpgZnifTkJpzTZ7Eue85S49QwpNhZTq6GRJwObb6jnLFNGB7Qm73V5HewTROPyxD0C29xqmaI68bQtV+hg==}
@@ -6080,7 +6081,7 @@ packages:
       - supports-color
       - terser
 
-  /vitest@1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@12.10.3)(jsdom@23.0.1):
+  /vitest@1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(happy-dom@13.0.0)(jsdom@23.0.1):
     resolution: {integrity: sha512-Ry2qs4UOu/KjpXVfOCfQkTnwSXYGrqTbBZxw6reIYEFjSy1QUARRg5pxiI5BEXy+kBVntxUYNMlq4Co+2vD3fQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6117,7 +6118,7 @@ packages:
       chai: 4.3.10
       debug: 4.3.4(supports-color@5.5.0)
       execa: 8.0.1
-      happy-dom: 12.10.3
+      happy-dom: 13.0.0
       jsdom: 23.0.1
       local-pkg: 0.5.0
       magic-string: 0.30.5
