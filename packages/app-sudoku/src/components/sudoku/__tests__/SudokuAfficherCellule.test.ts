@@ -14,7 +14,7 @@ suite('SudokuAfficherCellule.test.ts', () => {
     })
     const inputCell = getByRole('spinbutton') as HTMLInputElement
     expect(inputCell.attributes).toHaveProperty('disabled')
-    expect(inputCell.value).toEqual(5)
+    expect(inputCell.value).toEqual('5')
   })
 
   test('La cellule est modifiable quand elle reçoit un zéro, puis devient disabled', async () => {
