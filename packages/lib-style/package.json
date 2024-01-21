@@ -36,7 +36,7 @@
     "@vue/tsconfig": "^0.5.1",
     "autoprefixer": "^10.4.16",
     "happy-dom": "^13.0.0",
-    "jsdom": "^23.0.1",
+    "jsdom": "^24.0.0",
     "nodemon": "^3.0.2",
     "npm-run-all2": "^6.1.1",
     "postcss": "^8.4.32",
