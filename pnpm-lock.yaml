@@ -172,7 +172,7 @@ importers:
         version: 20.11.28
       ctix:
         specifier: ^2.3.0
-        version: 2.4.0
+        version: 2.4.1
       nodemon:
         specifier: ^3.0.2
         version: 3.1.0
@@ -193,7 +193,7 @@ importers:
         version: 20.11.28
       ctix:
         specifier: ^2.3.0
-        version: 2.4.0
+        version: 2.4.1
       nodemon:
         specifier: ^3.0.2
         version: 3.1.0
@@ -279,7 +279,7 @@ importers:
         version: 20.11.28
       ctix:
         specifier: ^2.3.0
-        version: 2.4.0
+        version: 2.4.1
       nodemon:
         specifier: ^3.0.2
         version: 3.1.0
@@ -2149,8 +2149,8 @@ packages:
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  /ctix@2.4.0:
-    resolution: {integrity: sha512-qjFLR5/9SLoifKmYAO1ecxuE557iWEcXv0N3+OU7rhfHDOiE5xWOKkwFXptDZ8oM4UR4dZiRBtZzlaOctI+g9g==}
+  /ctix@2.4.1:
+    resolution: {integrity: sha512-L6XHxdJBtRC0K19OwVvo+NCnL/SBqpgi81cSHbG5pDSNDgdI0/nyVY20TCeCTPhum4J4JGTA5Ns9jTGjjU0q/A==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
@@ -2160,7 +2160,7 @@ packages:
       comment-parser: 1.4.1
       consola: 3.2.3
       dayjs: 1.11.10
-      eta: 3.2.0
+      eta: 3.3.0
       filenamify: 4.3.0
       find-up: 5.0.0
       fuse.js: 7.0.0
@@ -2169,7 +2169,7 @@ packages:
       inquirer-ts-checkbox-plus-prompt: 1.0.1
       json5: 2.2.3
       jsonc-parser: 3.2.1
-      mathjs: 12.4.0
+      mathjs: 12.4.1
       minimist: 1.2.8
       my-easy-fp: 0.21.0
       my-node-fp: 0.10.3
@@ -2180,7 +2180,7 @@ packages:
       ts-morph: 20.0.0
       ts-pattern: 5.0.8
       tslib: 2.6.2
-      type-fest: 4.11.1
+      type-fest: 4.12.0
       typescript: 5.4.2
       yaml: 2.4.1
       yargs: 17.7.2
@@ -2493,8 +2493,8 @@ packages:
     dependencies:
       '@types/estree': 1.0.5
 
-  /eta@3.2.0:
-    resolution: {integrity: sha512-Qzc3it7nLn49dbOb9+oHV9rwtt9qN8oShRztqkZ3gXPqQflF0VLin5qhWk0g/2ioibBwT4DU6OIMVft7tg/rVg==}
+  /eta@3.3.0:
+    resolution: {integrity: sha512-heYvquilF7yyu51+ltzMv/loxQZTQ/jIp+wwoeMqm1FRASEpMEMn5GdO7BQ1bHXTmU8yccl+4seD844hCsuk9A==}
     engines: {node: '>=6.0.0'}
     dev: true
 
@@ -3742,8 +3742,8 @@ packages:
     dev: false
     optional: true
 
-  /mathjs@12.4.0:
-    resolution: {integrity: sha512-4Moy0RNjwMSajEkGGxNUyMMC/CZAcl87WBopvNsJWB4E4EFebpTedr+0/rhqmnOSTH3Wu/3WfiWiw6mqiaHxVw==}
+  /mathjs@12.4.1:
+    resolution: {integrity: sha512-welnW3khgwYjPYvECFHO+xkCxAx9IKIIPDDWPi8B5rKAvmgoEHnQX9slEmHKZTNaJiE+OS4qrJJcB4sfDn/4sw==}
     engines: {node: '>= 18'}
     hasBin: true
     dependencies:
@@ -5492,8 +5492,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest@4.11.1:
-    resolution: {integrity: sha512-MFMf6VkEVZAETidGGSYW2B1MjXbGX+sWIywn2QPEaJ3j08V+MwVRHMXtf2noB8ENJaD0LIun9wh5Z6OPNf1QzQ==}
+  /type-fest@4.12.0:
+    resolution: {integrity: sha512-5Y2/pp2wtJk8o08G0CMkuFPCO354FGwk/vbidxrdhRGZfd0tFnb4Qb8anp9XxXriwBgVPjdWbKpGl4J9lJY2jQ==}
     engines: {node: '>=16'}
     dev: true
 
