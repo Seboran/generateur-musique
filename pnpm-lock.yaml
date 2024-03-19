@@ -50,7 +50,7 @@ importers:
         version: link:../lib-sudoku
       opensheetmusicdisplay:
         specifier: ^1.8.4
-        version: 1.8.7
+        version: 1.8.8
       vue:
         specifier: ^3.4.3
         version: 3.4.21(typescript@5.4.2)
@@ -4233,8 +4233,8 @@ packages:
     dependencies:
       mimic-fn: 4.0.0
 
-  /opensheetmusicdisplay@1.8.7:
-    resolution: {integrity: sha512-Ait7zH9h3Dbzzvz/9wC9pruveIaYARa03XrrHfANh9A39y1rDtk9OErVKbMotwrp6R87oN5oCJmyTH8swxEBbg==}
+  /opensheetmusicdisplay@1.8.8:
+    resolution: {integrity: sha512-1ynLgEDN5caQ0znvczoqX9EYXuKkiCDgUTum6gSZ+yVPTQezIIQ2X9TM6hDnU7CgQTfJ8LVf3/kQedY2xDpQaA==}
     dependencies:
       '@types/vexflow': 1.2.42
       jszip: 3.10.1
