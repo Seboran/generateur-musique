@@ -35,7 +35,7 @@
     "@vue/test-utils": "^2.4.3",
     "@vue/tsconfig": "^0.5.1",
     "autoprefixer": "^10.4.16",
-    "happy-dom": "^13.0.0",
+    "happy-dom": "^14.0.0",
     "jsdom": "^24.0.0",
     "nodemon": "^3.0.2",
     "npm-run-all2": "^6.1.1",
