@@ -66,7 +66,7 @@ importers:
         version: 20.11.30
       '@vitejs/plugin-vue':
         specifier: ^5.0.2
-        version: 5.0.4(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))
+        version: 5.0.5(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))
       '@vue/test-utils':
         specifier: ^2.4.3
         version: 2.4.5
@@ -130,7 +130,7 @@ importers:
         version: 20.11.30
       '@vitejs/plugin-vue':
         specifier: ^5.0.2
-        version: 5.0.4(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))
+        version: 5.0.5(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))
       '@vue/test-utils':
         specifier: ^2.4.3
         version: 2.4.5
@@ -224,7 +224,7 @@ importers:
         version: 20.11.30
       '@vitejs/plugin-vue':
         specifier: ^5.0.2
-        version: 5.0.4(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))
+        version: 5.0.5(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))
       '@vue/test-utils':
         specifier: ^2.4.3
         version: 2.4.5
@@ -802,8 +802,8 @@ packages:
   '@types/vexflow@1.2.42':
     resolution: {integrity: sha512-bj3If1sm1FYJN0tJMV2BJNrwoeQ6xfrTt+rbmFvUytyxUhklLlW79MR4uwQ+upzrNJLVy012TnC7oZqSpEglSw==}
 
-  '@vitejs/plugin-vue@5.0.4':
-    resolution: {integrity: sha512-WS3hevEszI6CEVEx28F8RjTX97k3KsrcY6kvTg7+Whm5y3oYvcqzVeGCU3hxSAn4uY2CLCkeokkGKpoctccilQ==}
+  '@vitejs/plugin-vue@5.0.5':
+    resolution: {integrity: sha512-LOjm7XeIimLBZyzinBQ6OSm3UBCNVCpLkxGC0oWmm2YPzVZoxMsdvNVimLTBzpAnR9hl/yn1SHGuRfe6/Td9rQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
@@ -3879,7 +3879,7 @@ snapshots:
 
   '@types/vexflow@1.2.42': {}
 
-  '@vitejs/plugin-vue@5.0.4(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))':
+  '@vitejs/plugin-vue@5.0.5(vite@5.2.6(@types/node@20.11.30))(vue@3.4.21(typescript@5.4.3))':
     dependencies:
       vite: 5.2.6(@types/node@20.11.30)
       vue: 3.4.21(typescript@5.4.3)
