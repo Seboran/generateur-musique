@@ -10,7 +10,7 @@ importers:
     optionalDependencies:
       '@commitlint/cli':
         specifier: ^19.0.0
-        version: 19.2.1(@types/node@20.11.30)(typescript@5.4.3)
+        version: 19.2.1(@types/node@20.14.11)(typescript@5.4.3)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.1.0
@@ -23,7 +23,7 @@ importers:
     devDependencies:
       '@vitest/coverage-v8':
         specifier: ^1.1.1
-        version: 1.4.0(vitest@1.4.0(@types/node@20.11.30)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0))
+        version: 1.4.0(vitest@1.4.0(@types/node@20.14.11)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0))
       prettier:
         specifier: ^3.1.1
         version: 3.2.5
@@ -35,7 +35,7 @@ importers:
         version: 5.4.3
       vitest:
         specifier: ^1.1.1
-        version: 1.4.0(@types/node@20.11.30)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.14.11)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0)
 
   packages/app-musique:
     dependencies:
@@ -60,7 +60,7 @@ importers:
         version: 18.2.4
       '@types/jsdom':
         specifier: ^21.1.6
-        version: 21.1.6
+        version: 21.1.7
       '@types/node':
         specifier: ^20.10.6
         version: 20.11.30
@@ -124,7 +124,7 @@ importers:
         version: 18.2.4
       '@types/jsdom':
         specifier: ^21.1.6
-        version: 21.1.6
+        version: 21.1.7
       '@types/node':
         specifier: ^20.10.6
         version: 20.11.30
@@ -218,7 +218,7 @@ importers:
         version: 18.2.4
       '@types/jsdom':
         specifier: ^21.1.6
-        version: 21.1.6
+        version: 21.1.7
       '@types/node':
         specifier: ^20.10.6
         version: 20.11.30
@@ -787,11 +787,14 @@ packages:
   '@types/istanbul-lib-coverage@2.0.6':
     resolution: {integrity: sha512-2QF/t/auWm0lsy8XtKVPG19v3sSOQlJe/YHZgfjb/KBBHOGSV+J2q/S671rcq9uTBrLAXmZpqJiaQbMT+zNU1w==}
 
-  '@types/jsdom@21.1.6':
-    resolution: {integrity: sha512-/7kkMsC+/kMs7gAYmmBR9P0vGTnOoLhQhyhQJSlXGI5bzTHp6xdo0TtKWQAsz6pmSAeVqKSbqeyP6hytqr9FDw==}
+  '@types/jsdom@21.1.7':
+    resolution: {integrity: sha512-yOriVnggzrnQ3a9OKOCxaVuSug3w3/SbOj5i7VwXWZEyUNl3bLF9V3MfxGbZKuwqJOQyRfqXyROBB1CoZLFWzA==}
 
   '@types/node@20.11.30':
     resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
+
+  '@types/node@20.14.11':
+    resolution: {integrity: sha512-kprQpL8MMeszbz6ojB5/tU8PLN4kesnN8Gjzw349rDlNgsSzg90lAVj3llK99Dh7JON+t9AuscPPFW6mPbTnSA==}
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
@@ -3418,11 +3421,11 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@commitlint/cli@19.2.1(@types/node@20.11.30)(typescript@5.4.3)':
+  '@commitlint/cli@19.2.1(@types/node@20.14.11)(typescript@5.4.3)':
     dependencies:
       '@commitlint/format': 19.0.3
       '@commitlint/lint': 19.1.0
-      '@commitlint/load': 19.2.0(@types/node@20.11.30)(typescript@5.4.3)
+      '@commitlint/load': 19.2.0(@types/node@20.14.11)(typescript@5.4.3)
       '@commitlint/read': 19.2.1
       '@commitlint/types': 19.0.3
       execa: 8.0.1
@@ -3477,7 +3480,7 @@ snapshots:
       '@commitlint/types': 19.0.3
     optional: true
 
-  '@commitlint/load@19.2.0(@types/node@20.11.30)(typescript@5.4.3)':
+  '@commitlint/load@19.2.0(@types/node@20.14.11)(typescript@5.4.3)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -3485,7 +3488,7 @@ snapshots:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.4.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.30)(cosmiconfig@9.0.0(typescript@5.4.3))(typescript@5.4.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.14.11)(cosmiconfig@9.0.0(typescript@5.4.3))(typescript@5.4.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3850,14 +3853,14 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 20.11.30
+      '@types/node': 20.14.11
     optional: true
 
   '@types/estree@1.0.5': {}
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
-  '@types/jsdom@21.1.6':
+  '@types/jsdom@21.1.7':
     dependencies:
       '@types/node': 20.11.30
       '@types/tough-cookie': 4.0.5
@@ -3866,6 +3869,11 @@ snapshots:
   '@types/node@20.11.30':
     dependencies:
       undici-types: 5.26.5
+
+  '@types/node@20.14.11':
+    dependencies:
+      undici-types: 5.26.5
+    optional: true
 
   '@types/tough-cookie@4.0.5': {}
 
@@ -3876,7 +3884,7 @@ snapshots:
       vite: 5.2.6(@types/node@20.11.30)
       vue: 3.4.21(typescript@5.4.3)
 
-  '@vitest/coverage-v8@1.4.0(vitest@1.4.0(@types/node@20.11.30)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0))':
+  '@vitest/coverage-v8@1.4.0(vitest@1.4.0(@types/node@20.14.11)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -3892,7 +3900,7 @@ snapshots:
       strip-literal: 2.0.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.4.0(@types/node@20.11.30)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0)
+      vitest: 1.4.0(@types/node@20.14.11)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4448,9 +4456,9 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.30)(cosmiconfig@9.0.0(typescript@5.4.3))(typescript@5.4.3):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@20.14.11)(cosmiconfig@9.0.0(typescript@5.4.3))(typescript@5.4.3):
     dependencies:
-      '@types/node': 20.11.30
+      '@types/node': 20.14.11
       cosmiconfig: 9.0.0(typescript@5.4.3)
       jiti: 1.21.0
       typescript: 5.4.3
@@ -6545,6 +6553,23 @@ snapshots:
       - supports-color
       - terser
 
+  vite-node@1.4.0(@types/node@20.14.11):
+    dependencies:
+      cac: 6.7.14
+      debug: 4.3.4(supports-color@5.5.0)
+      pathe: 1.1.2
+      picocolors: 1.0.0
+      vite: 5.2.6(@types/node@20.14.11)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+
   vite-plugin-dts@3.7.3(@types/node@20.11.30)(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.6(@types/node@20.11.30)):
     dependencies:
       '@microsoft/api-extractor': 7.39.0(@types/node@20.11.30)
@@ -6568,6 +6593,15 @@ snapshots:
       rollup: 4.13.0
     optionalDependencies:
       '@types/node': 20.11.30
+      fsevents: 2.3.3
+
+  vite@5.2.6(@types/node@20.14.11):
+    dependencies:
+      esbuild: 0.20.2
+      postcss: 8.4.38
+      rollup: 4.13.0
+    optionalDependencies:
+      '@types/node': 20.14.11
       fsevents: 2.3.3
 
   vitest@1.4.0(@types/node@20.11.30)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0):
@@ -6594,6 +6628,42 @@ snapshots:
       why-is-node-running: 2.2.2
     optionalDependencies:
       '@types/node': 20.11.30
+      '@vitest/ui': 1.4.0(vitest@1.4.0)
+      happy-dom: 14.3.8
+      jsdom: 24.0.0
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+
+  vitest@1.4.0(@types/node@20.14.11)(@vitest/ui@1.4.0)(happy-dom@14.3.8)(jsdom@24.0.0):
+    dependencies:
+      '@vitest/expect': 1.4.0
+      '@vitest/runner': 1.4.0
+      '@vitest/snapshot': 1.4.0
+      '@vitest/spy': 1.4.0
+      '@vitest/utils': 1.4.0
+      acorn-walk: 8.3.2
+      chai: 4.4.1
+      debug: 4.3.4(supports-color@5.5.0)
+      execa: 8.0.1
+      local-pkg: 0.5.0
+      magic-string: 0.30.8
+      pathe: 1.1.2
+      picocolors: 1.0.0
+      std-env: 3.7.0
+      strip-literal: 2.0.0
+      tinybench: 2.6.0
+      tinypool: 0.8.2
+      vite: 5.2.6(@types/node@20.14.11)
+      vite-node: 1.4.0(@types/node@20.14.11)
+      why-is-node-running: 2.2.2
+    optionalDependencies:
+      '@types/node': 20.14.11
       '@vitest/ui': 1.4.0(vitest@1.4.0)
       happy-dom: 14.3.8
       jsdom: 24.0.0
