@@ -19,6 +19,8 @@ jobs:
           version: 9
       - name: Install Vercel CLI
         run: pnpm install --global vercel@latest
+      - name: Install install project
+        run: pnpm i
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
