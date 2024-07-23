@@ -1,9 +1,11 @@
 name: Vercel Production Deployment
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 on:
   workflow_call:
     secrets:
+      VERCEL_ORG_ID:
+        required: true
+      VERCEL_TOKEN:
+        required: true
       VERCEL_PROJECT_ID:
         description: 'Project ID of the vercel project you want to deploy'
         required: true
