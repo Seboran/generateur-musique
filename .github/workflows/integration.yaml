@@ -17,3 +17,7 @@ jobs:
   build:
     needs: [test]
     uses: ./.github/workflows/build.yaml
+
+  deploy:
+    needs: [build]
+    uses: ./.github/workflows/deploy.yaml
