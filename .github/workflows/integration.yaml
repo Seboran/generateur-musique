@@ -22,3 +22,4 @@ jobs:
     needs: [build]
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
