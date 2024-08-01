@@ -65,8 +65,8 @@ importers:
         specifier: 20.14.13
         version: 20.14.13
       '@vitejs/plugin-vue':
-        specifier: 5.1.1
-        version: 5.1.1(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))
+        specifier: 5.1.2
+        version: 5.1.2(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -129,8 +129,8 @@ importers:
         specifier: 20.14.13
         version: 20.14.13
       '@vitejs/plugin-vue':
-        specifier: 5.1.1
-        version: 5.1.1(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))
+        specifier: 5.1.2
+        version: 5.1.2(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -223,8 +223,8 @@ importers:
         specifier: 20.14.13
         version: 20.14.13
       '@vitejs/plugin-vue':
-        specifier: 5.1.1
-        version: 5.1.1(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))
+        specifier: 5.1.2
+        version: 5.1.2(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -793,8 +793,8 @@ packages:
   '@types/vexflow@1.2.42':
     resolution: {integrity: sha512-bj3If1sm1FYJN0tJMV2BJNrwoeQ6xfrTt+rbmFvUytyxUhklLlW79MR4uwQ+upzrNJLVy012TnC7oZqSpEglSw==}
 
-  '@vitejs/plugin-vue@5.1.1':
-    resolution: {integrity: sha512-sDckXxlHpMsjRQbAH9WanangrfrblsOd3pNifePs+FOHjJg1jfWq5L/P0PsBRndEt3nmdUnmvieP8ULDeX5AvA==}
+  '@vitejs/plugin-vue@5.1.2':
+    resolution: {integrity: sha512-nY9IwH12qeiJqumTCLJLE7IiNx7HZ39cbHaysEUd+Myvbz9KAqd2yq+U01Kab1R/H1BmiyM2ShTYlNH32Fzo3A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
@@ -3830,7 +3830,7 @@ snapshots:
 
   '@types/vexflow@1.2.42': {}
 
-  '@vitejs/plugin-vue@5.1.1(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))':
+  '@vitejs/plugin-vue@5.1.2(vite@5.3.5(@types/node@20.14.13))(vue@3.4.35(typescript@5.5.4))':
     dependencies:
       vite: 5.3.5(@types/node@20.14.13)
       vue: 3.4.35(typescript@5.5.4)
