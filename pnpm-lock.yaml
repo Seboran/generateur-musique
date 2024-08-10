@@ -29,7 +29,7 @@ importers:
         version: 3.3.3
       prettier-plugin-tailwindcss:
         specifier: 0.6.6
-        version: 0.6.6(prettier@3.3.3)
+        version: 0.6.6(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -171,8 +171,8 @@ importers:
         specifier: 20.14.15
         version: 20.14.15
       ctix:
-        specifier: 2.5.1
-        version: 2.5.1(typescript@5.5.4)
+        specifier: 2.6.0
+        version: 2.6.0(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
       nodemon:
         specifier: 3.1.4
         version: 3.1.4
@@ -192,8 +192,8 @@ importers:
         specifier: 20.14.15
         version: 20.14.15
       ctix:
-        specifier: 2.5.1
-        version: 2.5.1(typescript@5.5.4)
+        specifier: 2.6.0
+        version: 2.6.0(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
       nodemon:
         specifier: 3.1.4
         version: 3.1.4
@@ -278,8 +278,8 @@ importers:
         specifier: 20.14.15
         version: 20.14.15
       ctix:
-        specifier: 2.5.1
-        version: 2.5.1(typescript@5.5.4)
+        specifier: 2.6.0
+        version: 2.6.0(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
       nodemon:
         specifier: 3.1.4
         version: 3.1.4
@@ -1007,6 +1007,9 @@ packages:
   array-ify@1.0.0:
     resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
 
+  array-timsort@1.0.3:
+    resolution: {integrity: sha512-/+3GRL7dDAGEfM6TseQk/U+mi18TU2Ms9I3UlLdUMhz2hbvGNTKdj9xniwXfUqgYhHxRx0+8UnKkvlNwVU+cWQ==}
+
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
@@ -1195,6 +1198,10 @@ packages:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
 
+  comment-json@4.2.4:
+    resolution: {integrity: sha512-E5AjpSW+O+N5T2GsOQMHLLsJvrYw6G/AFt9GvU6NguEAfzKShh7hRiLtVo6S9KbRpFMGqE5ojo0/hE+sdteWvQ==}
+    engines: {node: '>= 6'}
+
   comment-parser@1.4.1:
     resolution: {integrity: sha512-buhp5kePrmda3vhc5B9t7pUQXAb2Tnd0qgpkIhPhkHXxJpiPJ11H0ZEU0oBpJ2QztSbzG/ZxMj/CHsYJqRHmyg==}
     engines: {node: '>= 12.0.0'}
@@ -1276,11 +1283,13 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  ctix@2.5.1:
-    resolution: {integrity: sha512-9Wty1chzE3RUIjtfj8U9wm61P2NROYG5e9wZouE+JqapeA6TV6p/hqXvv2NXmpKaBYGDgGjLlsJZlYP57PuBLw==}
+  ctix@2.6.0:
+    resolution: {integrity: sha512-dLhaFUJkVQL9NyQvuE2UGt0rsQGnAFy5OJRBEgVGbbhH9LLqScG9Sa3jO9TNny16CJuOfbqyU93KU9VDxia64g==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
+      prettier: ^3
+      prettier-plugin-organize-imports: ^3
       typescript: ^5
 
   dargs@8.1.0:
@@ -1434,6 +1443,11 @@ packages:
   escape-string-regexp@1.0.5:
     resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
     engines: {node: '>=0.8.0'}
+
+  esprima@4.0.1:
+    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
+    engines: {node: '>=4'}
+    hasBin: true
 
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
@@ -1634,6 +1648,10 @@ packages:
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
+    engines: {node: '>=8'}
+
+  has-own-prop@2.0.0:
+    resolution: {integrity: sha512-Pq0h+hvsVm6dDEa8x82GnLSYHOzNDt7f0ddFa3FqcQlgzEiptPqL+XrOJNavjOzSYiYWIrgeVYYgGlLmnxwilQ==}
     engines: {node: '>=8'}
 
   has-property-descriptors@1.0.2:
@@ -2512,6 +2530,23 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  prelude-ls@1.2.1:
+    resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
+    engines: {node: '>= 0.8.0'}
+
+  prettier-plugin-organize-imports@3.2.4:
+    resolution: {integrity: sha512-6m8WBhIp0dfwu0SkgfOxJqh+HpdyfqSSLfKKRZSFbDuEQXDDndb8fTpRWkUrX/uBenkex3MgnVk0J3b3Y5byog==}
+    peerDependencies:
+      '@volar/vue-language-plugin-pug': ^1.0.4
+      '@volar/vue-typescript': ^1.0.4
+      prettier: '>=2.0'
+      typescript: '>=2.9'
+    peerDependenciesMeta:
+      '@volar/vue-language-plugin-pug':
+        optional: true
+      '@volar/vue-typescript':
+        optional: true
+
   prettier-plugin-tailwindcss@0.6.6:
     resolution: {integrity: sha512-OPva5S7WAsPLEsOuOWXATi13QrCKACCiIonFgIR6V4lYv4QLp++UXVhZSzRbZxXGimkQtQT86CC6fQqTOybGng==}
     engines: {node: '>=14.21.3'}
@@ -2647,6 +2682,10 @@ packages:
   regexp.prototype.flags@1.5.2:
     resolution: {integrity: sha512-NcDiDkTLuPR+++OCKB0nWafEmhg/Da8aUPLPMQbK+bxKKCm1/S5he+AqYa4PlMCVBalb4/yxIRub6qkEx5yJbw==}
     engines: {node: '>= 0.4'}
+
+  repeat-string@1.6.1:
+    resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
+    engines: {node: '>=0.10'}
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -3028,6 +3067,10 @@ packages:
 
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
+
+  type-check@0.4.0:
+    resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
+    engines: {node: '>= 0.8.0'}
 
   type-fest@0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
@@ -4139,6 +4182,8 @@ snapshots:
   array-ify@1.0.0:
     optional: true
 
+  array-timsort@1.0.3: {}
+
   assertion-error@2.0.1: {}
 
   asynckit@0.4.0: {}
@@ -4366,6 +4411,14 @@ snapshots:
   commander@9.5.0:
     optional: true
 
+  comment-json@4.2.4:
+    dependencies:
+      array-timsort: 1.0.3
+      core-util-is: 1.0.3
+      esprima: 4.0.1
+      has-own-prop: 2.0.0
+      repeat-string: 1.6.1
+
   comment-parser@1.4.1: {}
 
   compare-func@2.0.0:
@@ -4450,11 +4503,12 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  ctix@2.5.1(typescript@5.5.4):
+  ctix@2.6.0(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4):
     dependencies:
       chalk: 4.1.2
       change-case: 4.1.2
       cli-progress: 3.12.0
+      comment-json: 4.2.4
       comment-parser: 1.4.1
       consola: 3.2.3
       dayjs: 1.11.12
@@ -4475,10 +4529,12 @@ snapshots:
       ora: 5.4.1
       pathe: 1.1.2
       prettier: 3.3.3
+      prettier-plugin-organize-imports: 3.2.4(prettier@3.3.3)(typescript@5.5.4)
       source-map-support: 0.5.21
       ts-morph: 23.0.0
       ts-pattern: 5.2.0
       tslib: 2.6.3
+      type-check: 0.4.0
       type-fest: 4.22.1
       typescript: 5.5.4
       yaml: 2.4.5
@@ -4666,6 +4722,8 @@ snapshots:
   escape-latex@1.2.0: {}
 
   escape-string-regexp@1.0.5: {}
+
+  esprima@4.0.1: {}
 
   estree-walker@2.0.2: {}
 
@@ -4913,6 +4971,8 @@ snapshots:
   has-flag@3.0.0: {}
 
   has-flag@4.0.0: {}
+
+  has-own-prop@2.0.0: {}
 
   has-property-descriptors@1.0.2:
     dependencies:
@@ -5859,9 +5919,18 @@ snapshots:
       tunnel-agent: 0.6.0
     optional: true
 
-  prettier-plugin-tailwindcss@0.6.6(prettier@3.3.3):
+  prelude-ls@1.2.1: {}
+
+  prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4):
     dependencies:
       prettier: 3.3.3
+      typescript: 5.5.4
+
+  prettier-plugin-tailwindcss@0.6.6(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3):
+    dependencies:
+      prettier: 3.3.3
+    optionalDependencies:
+      prettier-plugin-organize-imports: 3.2.4(prettier@3.3.3)(typescript@5.5.4)
 
   prettier@3.3.3: {}
 
@@ -5955,6 +6024,8 @@ snapshots:
       define-properties: 1.2.1
       es-errors: 1.3.0
       set-function-name: 2.0.2
+
+  repeat-string@1.6.1: {}
 
   require-directory@2.1.1: {}
 
@@ -6390,6 +6461,10 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
     optional: true
+
+  type-check@0.4.0:
+    dependencies:
+      prelude-ls: 1.2.1
 
   type-fest@0.21.3: {}
 

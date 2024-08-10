@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@types/node": "20.14.15",
-    "ctix": "2.5.1",
+    "ctix": "2.6.0",
     "nodemon": "3.1.4",
     "prettier": "3.3.3",
     "ts-node": "10.9.2",
