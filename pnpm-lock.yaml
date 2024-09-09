@@ -171,8 +171,8 @@ importers:
         specifier: 20.16.5
         version: 20.16.5
       ctix:
-        specifier: 2.6.3
-        version: 2.6.3(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
+        specifier: 2.6.4
+        version: 2.6.4(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
       nodemon:
         specifier: 3.1.4
         version: 3.1.4
@@ -192,8 +192,8 @@ importers:
         specifier: 20.16.5
         version: 20.16.5
       ctix:
-        specifier: 2.6.3
-        version: 2.6.3(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
+        specifier: 2.6.4
+        version: 2.6.4(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
       nodemon:
         specifier: 3.1.4
         version: 3.1.4
@@ -278,8 +278,8 @@ importers:
         specifier: 20.16.5
         version: 20.16.5
       ctix:
-        specifier: 2.6.3
-        version: 2.6.3(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
+        specifier: 2.6.4
+        version: 2.6.4(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4)
       nodemon:
         specifier: 3.1.4
         version: 3.1.4
@@ -1292,8 +1292,8 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  ctix@2.6.3:
-    resolution: {integrity: sha512-GhJx7lJCa2k9Gbsvwd3huFZ19eW4c3yhsAYh9C6o8hEX60pdnoZiGSmI6RZrLF6ClxFm1Zv2mcGK+B8UUB10SA==}
+  ctix@2.6.4:
+    resolution: {integrity: sha512-byyRemYT2HAeHS1mIN/jhxKG7OOO96XPuPMcHg+E+Lad+oWwxpPBjRLm9f6oyYpkhVBqGPIaeQGw7kuNY9FGgw==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -4512,7 +4512,7 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  ctix@2.6.3(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4):
+  ctix@2.6.4(prettier-plugin-organize-imports@3.2.4(prettier@3.3.3)(typescript@5.5.4))(prettier@3.3.3)(typescript@5.5.4):
     dependencies:
       chalk: 4.1.2
       change-case: 4.1.2
