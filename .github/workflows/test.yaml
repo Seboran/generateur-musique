@@ -31,4 +31,4 @@ jobs:
         run: npx vitest --coverage.enabled --coverage.provider=v8 --coverage.reporter=json-summary --coverage.reporter=json
       - name: 'Report Coverage'
         if: always() # Also gepnpnerate the report if tests are failing
-        uses: davelosert/vitest-coverage-report-action@fa4d510c186fb4ade39d4abc751385ed72a244f1 # v2
+        uses: davelosert/vitest-coverage-report-action@7727b0282e61c3cffa400550cf2ae57c2b16167d # v2
