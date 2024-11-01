@@ -1,5 +1,11 @@
 # Tu sais résoudre un sudoku ? Tu sais composer de la musique.
 
+## Projet déplacé
+
+Le projet a été déplacé ici : <https://github.com/Seboran/monorepo>
+
+## Description
+
 Ce projet a pour but de permettre aux gens d'apprendre la musique, à composer la musique et j'oserais dire à comprendre la musique.
 
 Hélas ce n'est pas un chemin facile
